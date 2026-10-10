@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Hendershott Drywall</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,21 +26,56 @@
 
     <main>
         <section class="container">
-            <div class="content-box">
-                <h2>GET A QUOTE</h2>
-                <p>Ready to get the job done right? Reach out directly. No run-arounds, just honest quotes and quality work.</p>
-                
-                <div style="margin: 30px 0; font-size: 1.2rem; line-height: 2;">
-                    <p><strong>PHONE:</strong> <a href="tel:+16187027892" style="color: var(--primary-red); font-weight: bold; text-decoration: none;">(618) 702-7892</a></p>
-                    <p><strong>BASED IN:</strong> Scott City, MO</p>
-                    <p><strong>SERVICE AREA:</strong> SE Missouri & Southern Illinois</p>
+            <h2 class="section-title">GET A QUOTE</h2>
+            
+            <div class="contact-grid" style="margin-bottom: 60px;">
+                <div class="contact-info-box">
+                    <h3 style="margin-bottom: 20px;">REACH OUT DIRECTLY</h3>
+                    <p style="color: #666; margin-bottom: 30px;">Need some serious drywall work or an expert repair job? We don't do run-arounds—just honest quotes and quality work. Call, text, or fill out the form.</p>
+                    
+                    <p><i class="fa-solid fa-phone"></i> <a href="tel:+16187027892" style="color: var(--primary-red); font-weight: bold; text-decoration: none;">(618) 702-7892</a></p>
+                    <p><i class="fa-solid fa-location-dot"></i> Based in Scott City, MO</p>
+                    <p><i class="fa-solid fa-map-location-dot"></i> Serving SE Missouri & Southern Illinois</p>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="tel" name="phone" placeholder="Phone Number" required>
+                        <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+                        <button type="submit" class="btn" style="width: 100%;">SEND MESSAGE</button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Hendershott Drywall and Repair LLC. All Rights Reserved.</p>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <img src="logo.png" alt="Logo" style="width: 50px; margin-bottom: 15px;">
+                <h3>Hendershott Drywall</h3>
+                <p>Based out of Scott City, MO, we provide top-tier residential drywall services built on hard work, grit, and extreme precision. Fully committed to quality.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="contact.html">Get an Estimate</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><i class="fa-solid fa-phone" style="margin-right: 10px; color: var(--primary-red);"></i> (618) 702-7892</p>
+                <p><i class="fa-solid fa-envelope" style="margin-right: 10px; color: var(--primary-red);"></i> Call or Text for Quotes</p>
+                <p><i class="fa-solid fa-clock" style="margin-right: 10px; color: var(--primary-red);"></i> Mon-Fri: 7:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hendershott Drywall and Repair LLC. All Rights Reserved.</p>
+        </div>
     </footer>
 </body>
-</html>
+                            </html>
+                            
