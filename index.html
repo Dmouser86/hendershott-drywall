@@ -1,132 +1,629 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hendershott Drywall and Repair LLC | Scott City, MO</title>
+    
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            --primary-red: #b31b1b;
+            --dark-charcoal: #1a1a1a;
+            --light-bg: #f4f3ef;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        header {
+            background-color: var(--dark-charcoal);
+            border-bottom: 5px solid var(--primary-red);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        .brand-logo {
+            width: 70px;
+            height: 70px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--primary-red);
+            transition: transform 0.3s ease;
+        }
+
+        .brand-logo i {
+            font-size: 35px;
+            color: var(--dark-charcoal);
+        }
+
+        .brand-wrapper:hover .brand-logo {
+            transform: rotate(-10deg) scale(1.05);
+        }
+
+        .nav-container h1 {
+            color: var(--white);
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .nav-container h1 span {
+            color: var(--primary-red);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 5px;
+            cursor: pointer;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .page-section {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero {
+            background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.95)), url('https://placehold.co/1920x1080/1a1a1a/b31b1b?text=Drywall+Construction') center/cover fixed;
+            background-color: var(--dark-charcoal);
+            color: var(--white);
+            text-align: center;
+            padding: 120px 20px;
+            border-bottom: 5px solid var(--primary-red);
+        }
+
+        .hero h2 {
+            font-size: 4.5rem;
+            color: var(--white);
+            text-shadow: 3px 3px 0px var(--primary-red);
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 35px;
+            color: #ddd;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: var(--dark-charcoal);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 6px;
+            background: var(--primary-red);
+            margin: 15px auto 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-top: 6px solid var(--dark-charcoal);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-top-color: var(--primary-red);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .icon-wrapper {
+            font-size: 3.5rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .icon-wrapper {
+            transform: scale(1.1);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--dark-charcoal);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-red);
+            color: var(--white);
+            padding: 18px 40px;
+            text-decoration: none;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            border: 3px solid var(--primary-red);
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 0; height: 100%;
+            background: var(--dark-charcoal);
+            z-index: -1;
+            transition: width 0.3s ease;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            color: var(--primary-red);
+            border-color: var(--dark-charcoal);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 3px solid var(--dark-charcoal);
+            color: var(--dark-charcoal);
+        }
+
+        .btn-outline::before {
+            background: var(--dark-charcoal);
+        }
+
+        .btn-outline:hover {
+            color: var(--white);
+            border-color: var(--dark-charcoal);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            background: var(--dark-charcoal);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover img {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .gallery-item h3 {
+            position: absolute;
+            color: var(--white);
+            text-shadow: 2px 2px 5px #000;
+            font-size: 1.8rem;
+            z-index: 2;
+            pointer-events: none;
+            background: rgba(0,0,0,0.5);
+            padding: 10px 20px;
+            border-left: 4px solid var(--primary-red);
+        }
+
+        .service-list {
+            list-style: none;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-list li {
+            background: var(--white);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-left: 6px solid var(--primary-red);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            transition: transform 0.2s;
+        }
+
+        .service-list li:hover {
+            transform: translateX(10px);
+        }
+
+        .service-list li i {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-top: 5px;
+        }
+
+        .service-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.6rem;
+            color: var(--dark-charcoal);
+        }
+
+        .testimonial-card {
+            background: var(--dark-charcoal);
+            color: var(--white);
+            padding: 40px;
+            border-left: 6px solid var(--primary-red);
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-card .stars {
+            color: var(--primary-red);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #eee;
+        }
+
+        .testimonial-author {
+            font-family: 'Impact', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: var(--primary-red);
+        }
+
+        .contact-info-box p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-color);
+        }
+
+        .contact-info-box i {
+            color: var(--primary-red);
+            font-size: 1.5rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-top: 6px solid var(--dark-charcoal);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            font-family: inherit;
+            font-size: 1.1rem;
+            background: var(--light-bg);
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-red);
+        }
+
+        .cta-banner {
+            background: var(--primary-red);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+            margin-top: 80px;
+        }
+
+        .cta-banner h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-banner .btn {
+            background: var(--dark-charcoal);
+            border-color: var(--dark-charcoal);
+            color: var(--white);
+        }
+
+        .cta-banner .btn::before {
+            background: var(--white);
+        }
+
+        .cta-banner .btn:hover {
+            color: var(--dark-charcoal);
+        }
+
+        footer {
+            background: var(--dark-charcoal);
+            color: #aaa;
+            padding: 60px 20px 20px;
+            border-top: 8px solid var(--primary-red);
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about h3, .footer-links h3, .footer-contact h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            line-height: 2;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .footer-contact p {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            .nav-container { flex-direction: column; align-items: stretch; }
+            .brand-wrapper { justify-content: space-between; }
+            .mobile-toggle { display: block; }
+            nav { display: none; width: 100%; margin-top: 15px; }
+            nav.open { display: block; }
+            nav ul { flex-direction: column; gap: 15px; text-align: center; }
+            .hero h2 { font-size: 3rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <div class="nav-container">
-            <div class="brand-wrapper">
-                <img src="logo.png" alt="Hendershott Drywall Badge" class="brand-logo">
-                <h1>Hendershott <span>Drywall & Repair</span></h1>
+            <div class="brand-wrapper" onclick="navigate('home')">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-trowel-bricks"></i>
+                </div>
+                <h1>Hendershott <br><span>Drywall & Repair</span></h1>
+                <i class="fa-solid fa-bars mobile-toggle" onclick="toggleMenu(event)"></i>
             </div>
-            <nav>
+            <nav id="main-nav">
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="gallery.html">GALLERY</a></li>
-                    <li><a href="testimonials.html">REVIEWS</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a onclick="navigate('home')" class="nav-link active" data-target="home">HOME</a></li>
+                    <li><a onclick="navigate('services')" class="nav-link" data-target="services">SERVICES</a></li>
+                    <li><a onclick="navigate('gallery')" class="nav-link" data-target="gallery">GALLERY</a></li>
+                    <li><a onclick="navigate('reviews')" class="nav-link" data-target="reviews">REVIEWS</a></li>
+                    <li><a onclick="navigate('contact')" class="nav-link" data-target="contact">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <!-- MASSIVE HERO LOGO -->
-            <img src="logo.png" alt="Hendershott Drywall Logo" class="hero-large-logo">
+        <div id="home" class="page-section active">
+            <section class="hero">
+                <h2>HUNG RIGHT. TAPED TIGHT.</h2>
+                <p>Premium residential drywall installation, flawless finishing, and seamless repairs across Southeast Missouri & Southern Illinois.</p>
+                <a onclick="navigate('contact')" class="btn">GET A FREE ESTIMATE</a>
+                <a onclick="navigate('services')" class="btn btn-outline" style="border-color: #fff; color: #fff; margin-left: 10px;">VIEW SERVICES</a>
+            </section>
+
+            <section class="container">
+                <h2 class="section-title">THE HENDERSHOTT STANDARD</h2>
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="icon-wrapper"><i class="fa-solid fa-ruler-combined"></i></div>
+                        <h3>NO SHORTCUTS</h3>
+                        <p>From the first sheet hung to the final sanding pass, every square inch is handled with precision. We set your painters up for perfect results.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon-wrapper"><i class="fa-solid fa-broom"></i></div>
+                        <h3>CLEAN WORKSPACE</h3>
+                        <p>Drywall is a dirty trade, but we respect your home. We tape off, protect your floors, and clean up the mess so you don't have to.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon-wrapper"><i class="fa-solid fa-handshake-angle"></i></div>
+                        <h3>HONEST PRICING</h3>
+                        <p>No run-arounds, no hidden fees, and no bullshit. We give you a fair, accurate quote, show up on time, and get the job done right.</p>
+                    </div>
+                </div>
+            </section>
             
-            <h2>HUNG RIGHT. TAPED TIGHT.</h2>
-            <p>Premium residential drywall installation, flawless finishing, and seamless repairs across Southeast Missouri & Southern Illinois.</p>
-            <a href="contact.html" class="btn">GET A FREE ESTIMATE</a>
-            <a href="services.html" class="btn btn-outline">VIEW SERVICES</a>
-        </section>
-
-        <section class="container">
-            <h2 class="section-title">THE HENDERSHOTT STANDARD</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="icon-wrapper"><i class="fa-solid fa-ruler-combined"></i></div>
-                    <h3>NO SHORTCUTS</h3>
-                    <p>From the first sheet hung to the final sanding pass, every square inch is handled with precision. We set your painters up for perfect results.</p>
-                </div>
-                <div class="card">
-                    <div class="icon-wrapper"><i class="fa-solid fa-broom"></i></div>
-                    <h3>CLEAN WORKSPACE</h3>
-                    <p>Drywall is a dirty trade, but we respect your home. We tape off, protect your floors, and clean up the mess so you don't have to.</p>
-                </div>
-                <div class="card">
-                    <div class="icon-wrapper"><i class="fa-solid fa-handshake-angle"></i></div>
-                    <h3>HONEST PRICING</h3>
-                    <p>No run-arounds, no hidden fees, and no bullshit. We give you a fair, accurate quote, show up on time, and get the job done right.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="container">
-            <h2 class="section-title">RECENT PROJECTS</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <h3>Custom Homes</h3>
-                </div>
-                <div class="gallery-item">
-                    <h3>Seamless Repairs</h3>
-                </div>
-                <div class="gallery-item">
-                    <h3>Texture Matching</h3>
-                </div>
-                <div class="gallery-item">
-                    <h3>Ceiling Finishes</h3>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 30px;">
-                <p style="color: #666; font-style: italic;">*Full portfolio available upon request during estimate.</p>
-            </div>
-        </section>
-
-        <section class="container">
-            <h2 class="section-title">WHAT OUR CLIENTS SAY</h2>
-            <div class="grid-2">
-                <div class="testimonial-card">
-                    <i class="fa-solid fa-quote-left"></i>
-                    <p class="testimonial-text">"Kevin and his crew came in and knocked out our entire remodel in record time. The joints are completely invisible. Highly recommend them if you want it done right the first time."</p>
-                    <p class="testimonial-author">- Mike T. | Cape Girardeau, MO</p>
-                </div>
-                <div class="testimonial-card">
-                    <i class="fa-solid fa-quote-left"></i>
-                    <p class="testimonial-text">"We had massive water damage in the living room. Hendershott Drywall patched it and matched the texture so perfectly you literally cannot tell there was ever a hole there."</p>
-                    <p class="testimonial-author">- Sarah L. | Scott City, MO</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-banner">
-            <h2>READY TO FIX THOSE WALLS?</h2>
-            <p style="margin-bottom: 30px; font-size: 1.3rem;">Stop staring at bad tape jobs, water damage, and ugly popcorn ceilings.</p>
-            <a href="contact.html" class="btn">CALL (618) 702-7892 TO START</a>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-about">
-                <img src="logo.png" alt="Logo" style="width: 50px; margin-bottom: 15px;">
-                <h3>Hendershott Drywall</h3>
-                <p>Based out of Scott City, MO, we provide top-tier residential drywall services built on hard work, grit, and extreme precision. Fully committed to quality.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Our Services</a></li>
-                    <li><a href="contact.html">Get an Estimate</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact</h3>
-                <p><i class="fa-solid fa-phone" style="margin-right: 10px; color: var(--primary-red);"></i> (618) 702-7892</p>
-                <p><i class="fa-solid fa-envelope" style="margin-right: 10px; color: var(--primary-red);"></i> Call or Text for Quotes</p>
-                <p><i class="fa-solid fa-clock" style="margin-right: 10px; color: var(--primary-red);"></i> Mon-Fri: 7:00 AM - 5:00 PM</p>
-            </div>
+            <section class="cta-banner" style="margin-top: 20px;">
+                <h2>READY TO FIX THOSE WALLS?</h2>
+                <p style="margin-bottom: 30px; font-size: 1.3rem;">Stop staring at bad tape jobs, water damage, and ugly popcorn ceilings.</p>
+                <a onclick="navigate('contact')" class="btn">CALL (618) 702-7892 TO START</a>
+            </section>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Hendershott Drywall and Repair LLC. All Rights Reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+
+        <div id="services" class="page-section">
+            <section class="container">
+                <h2 class="section-title">RESIDENTIAL SERVICES</h2>
+                <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 50px;">We handle everything from minor patches to full-scale home construction. We don't cut corners, and we don't leave a mess.</p>
+                <ul class="service-list">
+                    <li>
+                        <i class="fa-solid fa-hammer"></i>
+                        <div class="service-content">
+                            <h3>Drywall Hanging & Installation</h3>
+                            <p>Fast and precise hanging for custom homes, additions, and remodels. We stagger seams, screw tight, and ensure a solid foundation for finishing.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-trowel"></i>
+                        <div class="service-content">
+                            <h3>Taping & Mudding</h3>
+                            <p>Seamless joints, perfectly coated and sanded. We take pride in leaving absolutely no rough spots, bubbles, or visible seams.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-paint-roller"></i>
+                        <div class="service-content">
+                            <h3>Textures & Finishing</h3>
+                            <p>Custom texturing (knockdown, orange peel, swirl) or smoothing out old surfaces to match exactly what you want.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-house-chimney-crack"></i>
+                        <div class="service-content">
+                            <h3>Professional Repairs</h3>
+                            <p>Patching water damage, fixing doorknob holes, settling cracks, and making wall damage completely disappear like it never happened.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-arrow-up"></i>
+                        <div class="service-content">
+                            <h3>Ceiling Work</h3>
+                            <p>Scraping outdated popcorn ceilings, fixing sags, and delivering flawless flat or textured overhead finishes.</p>
+                        </div>
+                    <
