@@ -1,0 +1,298 @@
+:root {
+    --primary-red: #b31b1b;
+    --dark-charcoal: #1a1a1a;
+    --light-bg: #f4f3ef;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Sticky Header with Shadow */
+header {
+    background-color: var(--dark-charcoal);
+    border-bottom: 4px solid var(--primary-red);
+    padding: 0.8rem 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-logo {
+    width: 65px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+.nav-container h1 {
+    color: #fff;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 0px #000;
+}
+
+.nav-container h1 span {
+    color: var(--primary-red);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Slick Underline Hover Effect for Nav */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-red);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section with Parallax Feel */
+.hero {
+    background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.8)), url('hero-bg.jpg') center/cover fixed;
+    background-color: var(--dark-charcoal);
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px;
+    border-bottom: 5px solid var(--primary-red);
+}
+
+.hero h2 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 3px 3px 0px var(--primary-red);
+    margin-bottom: 15px;
+    animation: slideDown 0.8s ease-out;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 35px;
+    color: #ddd;
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* Modern Grid Layouts */
+.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--dark-charcoal);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 5px;
+    background: var(--primary-red);
+    margin: 10px auto 0;
+}
+
+/* Feature Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 40px 30px;
+    border-top: 6px solid var(--dark-charcoal);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-top-color: var(--primary-red);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--dark-charcoal);
+}
+
+/* Badass Buttons */
+.btn {
+    display: inline-block;
+    background: var(--primary-red);
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    border: 3px solid var(--primary-red);
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 0; height: 100%;
+    background: var(--dark-charcoal);
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 3px solid #fff;
+    color: #fff;
+    margin-left: 15px;
+}
+
+.btn-outline::before {
+    background: #fff;
+}
+
+.btn-outline:hover {
+    color: var(--dark-charcoal);
+}
+
+/* Call to Action Banner */
+.cta-banner {
+    background: var(--primary-red);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 60px;
+}
+
+.cta-banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-banner .btn {
+    background: var(--dark-charcoal);
+    border-color: var(--dark-charcoal);
+}
+
+.cta-banner .btn::before {
+    background: #fff;
+}
+
+.cta-banner .btn:hover {
+    color: var(--dark-charcoal);
+}
+
+/* Animations */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-up {
+    animation: slideDown 0.8s ease-out reverse backwards;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-charcoal);
+    color: #888;
+    text-align: center;
+    padding: 30px;
+    border-top: 5px solid var(--primary-red);
+}
+
+/* Mobile Fixes */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero h2 {
+        font-size: 2.8rem;
+    }
+    .btn-outline {
+        margin-left: 0;
+        margin-top: 15px;
+        display: block;
+    }
+      }
