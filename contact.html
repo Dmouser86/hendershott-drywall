@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Hendershott Drywall and Repair</title>
+    <title>Contact - Hendershott Drywall and Repair LLC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,8 +11,15 @@
     <header>
         <div class="nav-container">
             <div class="brand-wrapper">
-                <img src="logo.png" alt="Hendershott Drywall Logo" class="brand-logo">
-                <h1>Hendershott <span>Drywall & Repair</span></h1>
+                <svg class="svg-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 10 10 L 90 10 L 90 60 C 90 85 50 95 50 95 C 50 95 10 85 10 60 Z" fill="#122240" stroke="#A8B5C2" stroke-width="4"/>
+                    <path d="M 35 30 L 35 70 M 65 30 L 65 70 M 35 50 L 65 50" stroke="#A8B5C2" stroke-width="12" stroke-linecap="square"/>
+                    <polygon points="40,50 60,50 50,68" fill="#FFFFFF"/>
+                </svg>
+                <div class="brand-text">
+                    <h1>Hendershott</h1>
+                    <span>Drywall & Repair LLC</span>
+                </div>
             </div>
             <nav>
                 <ul>
@@ -27,25 +34,25 @@
     </header>
 
     <main>
-        <section class="container" style="padding-top: 40px;">
-            <h2 class="section-title">Get a <span>Quote</span></h2>
+        <section class="container">
+            <h2 class="section-title">Get a Quote</h2>
             
-            <div class="grid-2" style="align-items: start;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
                 <div class="card" style="text-align: left;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Reach Out Directly</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 25px;">Need some serious drywall work or an expert repair job? We don't do run-arounds—just honest quotes and quality work.</p>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--midnight-navy);">Reach Out Directly</h3>
+                    <p style="color: var(--raw-charcoal); margin-bottom: 25px;">Need some serious drywall work or an expert repair job? We don't do run-arounds—just honest quotes and quality work.</p>
                     
-                    <p style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fa-solid fa-phone" style="color: var(--primary-orange); margin-right: 10px;"></i> <a href="tel:+16187027892" style="color: var(--navy-blue); font-weight: 700; text-decoration: none;">(618) 702-7892</a></p>
-                    <p style="margin-bottom: 15px;"><i class="fa-solid fa-location-dot" style="color: var(--primary-orange); margin-right: 10px;"></i> Based in Scott City, MO</p>
-                    <p><i class="fa-solid fa-map-location-dot" style="color: var(--primary-orange); margin-right: 10px;"></i> Serving SE Missouri & Southern Illinois</p>
+                    <p style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fa-solid fa-phone" style="color: var(--midnight-navy); margin-right: 10px;"></i> <a href="tel:+16187027892" style="color: var(--midnight-navy); font-weight: 700; text-decoration: none;">(618) 702-7892</a></p>
+                    <p style="margin-bottom: 15px;"><i class="fa-solid fa-location-dot" style="color: var(--midnight-navy); margin-right: 10px;"></i> Based in Scott City, MO</p>
+                    <p><i class="fa-solid fa-map-location-dot" style="color: var(--midnight-navy); margin-right: 10px;"></i> Serving SE Missouri & Southern Illinois</p>
                 </div>
 
                 <div class="card" style="text-align: left;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Send Us a Message</h3>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--midnight-navy);">Send Us a Message</h3>
                     <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
-                        <input type="text" name="name" placeholder="Your Name" required style="padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; font-family: inherit;">
-                        <input type="tel" name="phone" placeholder="Phone Number" required style="padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; font-family: inherit;">
-                        <textarea name="message" rows="5" placeholder="Tell us about your project..." required style="padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; font-family: inherit; resize: vertical;"></textarea>
+                        <input type="text" name="name" placeholder="Your Name" required style="padding: 15px; border: 1px solid #ccc; border-radius: 3px; font-size: 1rem; font-family: inherit;">
+                        <input type="tel" name="phone" placeholder="Phone Number" required style="padding: 15px; border: 1px solid #ccc; border-radius: 3px; font-size: 1rem; font-family: inherit;">
+                        <textarea name="message" rows="5" placeholder="Tell us about your project..." required style="padding: 15px; border: 1px solid #ccc; border-radius: 3px; font-size: 1rem; font-family: inherit; resize: vertical;"></textarea>
                         <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Send Message</button>
                     </form>
                 </div>
@@ -56,24 +63,24 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-about">
-                <img src="logo.png" alt="Logo" style="width: 50px; margin-bottom: 15px;">
-                <h3>Hendershott Drywall and Repair</h3>
-                <p>Based out of Scott City, MO, providing top-tier residential drywall services built on hard work, grit, and extreme precision.</p>
+                <h3 style="color: var(--white); margin-bottom: 10px;">Hendershott</h3>
+                <h4 style="color: var(--steel-silver); margin-bottom: 20px; letter-spacing: 1px;">DRYWALL & REPAIR LLC</h4>
+                <p>Based out of Scott City, MO, providing premium residential drywall services built on hard work, grit, and extreme precision.</p>
             </div>
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Our Services</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="gallery.html">Project Gallery</a></li>
                     <li><a href="contact.html">Get an Estimate</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
-                <h3>Contact</h3>
-                <p><i class="fa-solid fa-phone" style="margin-right: 10px; color: var(--primary-orange);"></i> (618) 702-7892</p>
-                <p><i class="fa-solid fa-envelope" style="margin-right: 10px; color: var(--primary-orange);"></i> Call or Text for Quotes</p>
-                <p><i class="fa-solid fa-clock" style="margin-right: 10px; color: var(--primary-orange);"></i> Mon-Fri: 7:00 AM - 5:00 PM</p>
+                <h3>Contact Us</h3>
+                <p><i class="fa-solid fa-phone"></i> (618) 702-7892</p>
+                <p><i class="fa-solid fa-envelope"></i> Call or Text for Quotes</p>
+                <p><i class="fa-solid fa-location-dot"></i> Serving SE Missouri & So. Illinois</p>
             </div>
         </div>
         <div class="footer-bottom">
