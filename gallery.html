@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Gallery - Hendershott Drywall and Repair</title>
+    <title>Gallery - Hendershott Drywall and Repair LLC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,8 +11,15 @@
     <header>
         <div class="nav-container">
             <div class="brand-wrapper">
-                <img src="logo.png" alt="Hendershott Drywall Logo" class="brand-logo">
-                <h1>Hendershott <span>Drywall & Repair</span></h1>
+                <svg class="svg-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 10 10 L 90 10 L 90 60 C 90 85 50 95 50 95 C 50 95 10 85 10 60 Z" fill="#122240" stroke="#A8B5C2" stroke-width="4"/>
+                    <path d="M 35 30 L 35 70 M 65 30 L 65 70 M 35 50 L 65 50" stroke="#A8B5C2" stroke-width="12" stroke-linecap="square"/>
+                    <polygon points="40,50 60,50 50,68" fill="#FFFFFF"/>
+                </svg>
+                <div class="brand-text">
+                    <h1>Hendershott</h1>
+                    <span>Drywall & Repair LLC</span>
+                </div>
             </div>
             <nav>
                 <ul>
@@ -28,16 +35,16 @@
 
     <main>
         <section class="container">
-            <h2 class="section-title">Our Recent <span>Work</span></h2>
-            <p style="text-align: center; font-size: 1.15rem; color: var(--text-muted); margin-bottom: 50px; max-width: 700px; margin-inline: auto;">Browse our portfolio of custom drywall hanging, seamless taping, and advanced texturing. Real project photos coming soon.</p>
+            <h2 class="section-title">Our Recent Work</h2>
+            <p style="text-align: center; font-size: 1.15rem; color: var(--raw-charcoal); margin-bottom: 60px; max-width: 700px; margin-inline: auto;">Browse our portfolio of custom drywall hanging, seamless taping, and advanced texturing. Real project photos coming soon.</p>
             
-            <div class="gallery-grid">
-                <div class="gallery-item"><h3>Custom Ceiling Work</h3></div>
-                <div class="gallery-item"><h3>Seamless Tape Jobs</h3></div>
-                <div class="gallery-item"><h3>Water Damage Repair</h3></div>
-                <div class="gallery-item"><h3>New Construction</h3></div>
-                <div class="gallery-item"><h3>Texture Matching</h3></div>
-                <div class="gallery-item"><h3>Basement Finishing</h3></div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div style="background: var(--midnight-navy); color: #fff; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: 700; font-size: 1.2rem; border-bottom: 5px solid var(--steel-silver);">Custom Ceiling Work</div>
+                <div style="background: var(--midnight-navy); color: #fff; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: 700; font-size: 1.2rem; border-bottom: 5px solid var(--steel-silver);">Seamless Tape Jobs</div>
+                <div style="background: var(--midnight-navy); color: #fff; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: 700; font-size: 1.2rem; border-bottom: 5px solid var(--steel-silver);">Water Damage Repair</div>
+                <div style="background: var(--midnight-navy); color: #fff; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: 700; font-size: 1.2rem; border-bottom: 5px solid var(--steel-silver);">New Construction</div>
+                <div style="background: var(--midnight-navy); color: #fff; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: 700; font-size: 1.2rem; border-bottom: 5px solid var(--steel-silver);">Texture Matching</div>
+                <div style="background: var(--midnight-navy); color: #fff; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: 700; font-size: 1.2rem; border-bottom: 5px solid var(--steel-silver);">Basement Finishing</div>
             </div>
         </section>
 
@@ -51,24 +58,24 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-about">
-                <img src="logo.png" alt="Logo" style="width: 50px; margin-bottom: 15px;">
-                <h3>Hendershott Drywall and Repair</h3>
-                <p>Based out of Scott City, MO, providing top-tier residential drywall services built on hard work, grit, and extreme precision.</p>
+                <h3 style="color: var(--white); margin-bottom: 10px;">Hendershott</h3>
+                <h4 style="color: var(--steel-silver); margin-bottom: 20px; letter-spacing: 1px;">DRYWALL & REPAIR LLC</h4>
+                <p>Based out of Scott City, MO, providing premium residential drywall services built on hard work, grit, and extreme precision.</p>
             </div>
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Our Services</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="gallery.html">Project Gallery</a></li>
                     <li><a href="contact.html">Get an Estimate</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
-                <h3>Contact</h3>
-                <p><i class="fa-solid fa-phone" style="margin-right: 10px; color: var(--primary-orange);"></i> (618) 702-7892</p>
-                <p><i class="fa-solid fa-envelope" style="margin-right: 10px; color: var(--primary-orange);"></i> Call or Text for Quotes</p>
-                <p><i class="fa-solid fa-clock" style="margin-right: 10px; color: var(--primary-orange);"></i> Mon-Fri: 7:00 AM - 5:00 PM</p>
+                <h3>Contact Us</h3>
+                <p><i class="fa-solid fa-phone"></i> (618) 702-7892</p>
+                <p><i class="fa-solid fa-envelope"></i> Call or Text for Quotes</p>
+                <p><i class="fa-solid fa-location-dot"></i> Serving SE Missouri & So. Illinois</p>
             </div>
         </div>
         <div class="footer-bottom">
