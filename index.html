@@ -3,107 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hendershott Drywall and Repair LLC | Southeast Missouri</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Hendershott Drywall and Repair LLC | Scott City, MO</title>
+    <meta name="description" content="Professional residential drywall installation and repair services serving Southeast Missouri and Southern Illinois.">
+    <!-- Link to our external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for a modern, professional look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <div class="brand-wrapper">
-                <!-- CUSTOM SVG LOGO GENERATED IN CODE -->
-                <svg class="svg-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Shield Base -->
-                    <path d="M 10 10 L 90 10 L 90 60 C 90 85 50 95 50 95 C 50 95 10 85 10 60 Z" fill="#122240" stroke="#A8B5C2" stroke-width="4"/>
-                    <!-- The Heavy 'H' -->
-                    <path d="M 35 30 L 35 70 M 65 30 L 65 70 M 35 50 L 65 50" stroke="#A8B5C2" stroke-width="12" stroke-linecap="square"/>
-                    <!-- Trowel Abstract Icon -->
-                    <polygon points="40,50 60,50 50,68" fill="#FFFFFF"/>
-                </svg>
-                <div class="brand-text">
-                    <h1>Hendershott</h1>
-                    <span>Drywall & Repair LLC</span>
-                </div>
+
+    <!-- Navigation Bar -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <h1>Hendershott Drywall</h1>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="gallery.html">GALLERY</a></li>
-                    <li><a href="testimonials.html">REVIEWS</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact" class="btn-primary">Contact Us</a></li>
                 </ul>
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-menu-icon" id="mobile-menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Precision Drywall <br> & Finishing</h2>
-                <h3>HENDERSHOTT DRYWALL & REPAIR LLC</h3>
-                <p>We provide top-tier drywall hanging, flawless taping, and seamless repairs across Southeast Missouri and Southern Illinois. Hung right. Taped tight.</p>
-                <div class="hero-buttons">
-                    <a href="contact.html" class="btn">Get a Free Estimate</a>
-                    <a href="services.html" class="btn btn-outline">Explore Services</a>
-                </div>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content container">
+            <h2>Expert Drywall Solutions You Can Trust</h2>
+            <p>Providing top-tier residential drywall installation, finishing, and repair for Southeast Missouri and Southern Illinois.</p>
+            <a href="#contact" class="btn-large">Get a Free Estimate</a>
+        </div>
+    </section>
 
-        <section class="container">
-            <h2 class="section-title">The Hendershott Standard</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <i class="fa-solid fa-ruler-combined"></i>
-                    <h3>Flawless Hanging</h3>
-                    <p>From custom homes to remodels, every single sheet is measured with precision, staggered correctly, and screwed tight to set the stage for a perfect finish.</p>
+    <!-- Services Section -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Drywall Installation</h3>
+                    <p>Flawless hanging and finishing for new constructions, additions, or complete remodels.</p>
                 </div>
-                <div class="card">
-                    <i class="fa-solid fa-trowel"></i>
-                    <h3>Seamless Taping</h3>
-                    <p>We leave absolutely zero rough spots or visible seams. When we hand the project over to your painters, the walls are glass-smooth and ready to go.</p>
+                <div class="service-card">
+                    <h3>Drywall Repair</h3>
+                    <p>Seamless patching for holes, water damage, and everyday wear and tear.</p>
                 </div>
-                <div class="card">
-                    <i class="fa-solid fa-handshake-angle"></i>
-                    <h3>Honest Business</h3>
-                    <p>We pride ourselves on direct communication, accurate quotes, and protecting your floors. No shortcuts, no hidden fees, and absolute respect for your home.</p>
+                <div class="service-card">
+                    <h3>Custom Texturing</h3>
+                    <p>Professional texturing matching your existing walls or providing a fresh new look.</p>
                 </div>
-            </div>
-        </section>
-
-        <section class="cta-banner">
-            <h2>Ready to Fix Those Walls?</h2>
-            <p>Stop dealing with bad tape jobs, water damage, and unreliable contractors.</p>
-            <a href="contact.html" class="btn">Call (618) 702-7892 To Start</a>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-about">
-                <h3 style="color: var(--white); margin-bottom: 10px;">Hendershott</h3>
-                <h4 style="color: var(--steel-silver); margin-bottom: 20px; letter-spacing: 1px;">DRYWALL & REPAIR LLC</h4>
-                <p>Based out of Scott City, MO, providing premium residential drywall services built on hard work, grit, and extreme precision.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Our Services</a></li>
-                    <li><a href="gallery.html">Project Gallery</a></li>
-                    <li><a href="contact.html">Get an Estimate</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p><i class="fa-solid fa-phone"></i> (618) 702-7892</p>
-                <p><i class="fa-solid fa-envelope"></i> Call or Text for Quotes</p>
-                <p><i class="fa-solid fa-location-dot"></i> Serving SE Missouri & So. Illinois</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Hendershott Drywall and Repair LLC. All Rights Reserved.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Hendershott Drywall and Repair LLC</h3>
+                <p>Based in Scott City, MO</p>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; <span id="current-year"></span> Hendershott Drywall and Repair LLC. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Link to our external JavaScript file -->
+    <script src="main.js"></script>
 </body>
 </html>
