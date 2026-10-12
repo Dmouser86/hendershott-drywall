@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Oswald:wght@500;700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    --pitch-black: #050505;
+    --gunmetal: #121212;
+    --panel-dark: #1a1a1a;
+    --metal-silver: #b0bec5;
+    --purple-burst: #8B008B;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--gunmetal);
+    color: var(--metal-silver);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    color: var(--white);
+}
+
+/* Navigation */
+header {
+    background-color: var(--pitch-black);
+    border-bottom: 3px solid var(--purple-burst);
+    padding: 15px 20px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-text h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: -5px;
+}
+
+.brand-text span {
+    font-family: 'Oswald', sans-serif;
+    color: var(--purple-burst);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--metal-silver);
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--purple-burst);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--pitch-black);
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 2px solid #333;
+}
+
+.hero h3 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--purple-burst);
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border: 2px solid var(--purple-burst);
+    cursor: pointer;
+}
+
+.btn-solid {
+    background-color: var(--purple-burst);
+    color: var(--white);
+}
+
+.btn-solid:hover {
+    background-color: transparent;
+    color: var(--purple-burst);
+}
+
+.btn:not(.btn-solid) {
+    background-color: transparent;
+    color: var(--purple-burst);
+}
+
+.btn:not(.btn-solid):hover {
+    background-color: var(--purple-burst);
+    color: var(--white);
+}
+
+/* Layout & Cards */
+.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+.section-title span {
+    color: var(--purple-burst);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--panel-dark);
+    padding: 40px;
+    border-top: 4px solid var(--purple-burst);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: var(--purple-burst);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* CTA Banner */
+.cta-banner {
+    background-color: var(--pitch-black);
+    text-align: center;
+    padding: 60px 20px;
+    border-top: 2px solid #333;
+}
+
+.cta-banner h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.cta-banner p {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--pitch-black);
+    border-top: 3px solid var(--purple-burst);
+    padding: 60px 20px 20px;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-about h4 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--purple-burst);
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links a {
+    color: var(--metal-silver);
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--purple-burst);
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+    color: var(--metal-silver);
+}
+
+.footer-contact i {
+    color: var(--purple-burst);
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    color: var(--white);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--gunmetal);
+    border: 1px solid #333;
+    color: var(--white);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--purple-burst);
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--metal-silver);
+      }
