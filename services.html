@@ -8,98 +8,63 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <div class="brand-wrapper">
-                <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 50 5 L 90 25 L 90 75 L 50 95 L 10 75 L 10 25 Z" fill="#050505" stroke="#8B008B" stroke-width="3"/>
-                    <path d="M 30 30 L 30 70 M 70 30 L 70 70 M 30 50 L 70 50" stroke="#E0E0E0" stroke-width="8" stroke-linecap="butt"/>
-                    <path d="M 50 15 L 50 85" stroke="#8B008B" stroke-width="2" opacity="0.5"/>
-                </svg>
-                <div class="brand-text">
-                    <h1>HENDERSHOTT</h1>
-                    <span>Drywall & Repair LLC</span>
-                </div>
+    <aside class="sidebar">
+        <div>
+            <div class="sidebar-brand">
+                <img src="logo.svg" alt="Hendershott Drywall Logo">
             </div>
-            <nav>
+            <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="gallery.html">GALLERY</a></li>
-                    <li><a href="testimonials.html">REVIEWS</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html" style="color: var(--amber);">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="testimonials.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
-    </header>
+        <div class="sidebar-contact">
+            <p>Ready to start?</p>
+            <span>(618) 702-7892</span>
+        </div>
+    </aside>
 
-    <main>
-        <section class="container">
-            <h2 class="section-title">OUR <span>ARSENAL</span></h2>
-            <div class="grid-3">
-                <div class="card">
-                    <i class="fa-solid fa-hammer"></i>
-                    <h3>HEAVY-DUTY HANGING</h3>
-                    <p>We lock every sheet into place with absolute structural integrity. Staggered seams, tight screws, zero bowing. We build walls designed to last.</p>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-trowel"></i>
-                    <h3>FLAWLESS TAPING</h3>
-                    <p>Tape and mud applied with microscopic precision. We sand down every joint until the wall is glass-smooth. Zero visible seams.</p>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-paint-roller"></i>
-                    <h3>TEXTURE FORGING</h3>
-                    <p>From heavy knockdown and orange peel to perfectly smooth level-5 finishes. We dictate the exact texture of your room's environment.</p>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-skull-crossbones"></i>
-                    <h3>DAMAGE ELIMINATION</h3>
-                    <p>Water leaks, stress cracks, and massive holes destroyed. We execute deep repairs that make the original structural damage completely vanish.</p>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-arrow-up"></i>
-                    <h3>CEILING OVERHAULS</h3>
-                    <p>We scrape outdated popcorn ceilings, fix structural sags, and deliver flawless flat or heavily textured overhead finishes.</p>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-house-chimney-crack"></i>
-                    <h3>REMODELS & TIE-INS</h3>
-                    <p>Full room conversions and basement finishing. We seamlessly tie new drywall into your existing home architecture so nothing looks out of place.</p>
-                </div>
+    <main class="main-content">
+        <h1 class="page-title">Residential <span>Services</span></h1>
+        <p class="page-subtitle">Expert-level craftsmanship for new builds, renovations, and structural repairs.</p>
+        
+        <div class="grid-3">
+            <div class="card">
+                <i class="fa-solid fa-hammer"></i>
+                <h3>Drywall Hanging</h3>
+                <p>Fast and precise hanging for custom homes, additions, and remodels. We stagger seams and screw tight for maximum structural integrity.</p>
             </div>
-            <div style="text-align: center; margin-top: 60px;">
-                <a href="contact.html" class="btn btn-solid">SUBMIT A SERVICE REQUEST</a>
+            <div class="card">
+                <i class="fa-solid fa-trowel"></i>
+                <h3>Taping & Mudding</h3>
+                <p>Seamless joints, perfectly coated and sanded. We don't leave rough spots, bubbles, or visible seams. Paint-ready perfection.</p>
             </div>
-        </section>
+            <div class="card">
+                <i class="fa-solid fa-paint-roller"></i>
+                <h3>Textures & Finishing</h3>
+                <p>Custom texturing including knockdown and orange peel, or completely smoothing out old surfaces to match exactly what you want.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-house-chimney-crack"></i>
+                <h3>Professional Repairs</h3>
+                <p>Patching heavy water damage, fixing doorknob holes, settling cracks, and making wall damage completely disappear.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-arrow-up"></i>
+                <h3>Ceiling Work</h3>
+                <p>Scraping outdated popcorn ceilings, fixing sags, and delivering flawless flat or textured overhead finishes.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-house"></i>
+                <h3>Remodels & Tie-ins</h3>
+                <p>Full room conversions, basement finishing, and seamless tie-ins to your home's existing walls and ceiling textures.</p>
+            </div>
+        </div>
     </main>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-about">
-                <h3>HENDERSHOTT</h3>
-                <h4>DRYWALL & REPAIR LLC</h4>
-                <p>Based in Scott City, MO. We bring extreme precision and relentless hard work to the residential drywall trade.</p>
-            </div>
-            <div class="footer-links">
-                <h3>NAVIGATION</h3>
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="gallery.html">GALLERY</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>COMMUNICATIONS</h3>
-                <p><i class="fa-solid fa-phone"></i> (618) 702-7892</p>
-                <p><i class="fa-solid fa-envelope"></i> REQUESTS@HENDERSHOTT.COM</p>
-                <p><i class="fa-solid fa-location-crosshairs"></i> SE MISSOURI & SOUTHERN IL</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 HENDERSHOTT DRYWALL & REPAIR LLC. ALL RIGHTS RESERVED.</p>
-        </div>
-    </footer>
 </body>
 </html>
