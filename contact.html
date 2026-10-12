@@ -8,109 +8,86 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <div class="brand-wrapper">
-                <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 50 5 L 90 25 L 90 75 L 50 95 L 10 75 L 10 25 Z" fill="#050505" stroke="#8B008B" stroke-width="3"/>
-                    <path d="M 30 30 L 30 70 M 70 30 L 70 70 M 30 50 L 70 50" stroke="#E0E0E0" stroke-width="8" stroke-linecap="butt"/>
-                    <path d="M 50 15 L 50 85" stroke="#8B008B" stroke-width="2" opacity="0.5"/>
-                </svg>
-                <div class="brand-text">
-                    <h1>HENDERSHOTT</h1>
-                    <span>Drywall & Repair LLC</span>
-                </div>
+    <aside class="sidebar">
+        <div>
+            <div class="sidebar-brand">
+                <img src="logo.svg" alt="Hendershott Drywall Logo">
             </div>
-            <nav>
+            <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="gallery.html">GALLERY</a></li>
-                    <li><a href="testimonials.html">REVIEWS</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="testimonials.html">Reviews</a></li>
+                    <li><a href="contact.html" style="color: var(--amber);">Contact</a></li>
                 </ul>
             </nav>
         </div>
-    </header>
+        <div class="sidebar-contact">
+            <p>Direct Line</p>
+            <span>(618) 702-7892</span>
+        </div>
+    </aside>
 
-    <main>
-        <section class="container">
-            <h2 class="section-title">REQUEST <span>DEPLOYMENT</span></h2>
-            <p style="text-align: center; margin-bottom: 40px; font-size: 1.15rem; color: var(--metal-silver); max-width: 600px; margin-inline: auto;">Provide your project details below. We review all submissions and respond promptly to schedule an on-site evaluation.</p>
-            
-            <div style="max-width: 800px; margin: 0 auto; background: var(--panel-dark); padding: 40px; border-top: 4px solid var(--purple-burst);">
+    <main class="main-content">
+        <h1 class="page-title">Get a <span>Quote</span></h1>
+        <p class="page-subtitle">Submit your project details below. We review all submissions and respond promptly to schedule an on-site evaluation.</p>
+        
+        <div class="grid-2">
+            <div>
+                <div class="card" style="margin-bottom: 30px;">
+                    <h3><i class="fa-solid fa-phone"></i> Direct Contact</h3>
+                    <p style="font-size: 1.2rem; font-weight: 600; margin: 10px 0;">(618) 702-7892</p>
+                    <p style="color: var(--gray);">Based in Scott City, MO</p>
+                    <p style="color: var(--gray);">Serving SE Missouri & Southern Illinois</p>
+                </div>
+            </div>
+
+            <div class="form-card">
                 <form action="#" method="POST">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                        <div class="form-group">
-                            <label>FULL NAME</label>
-                            <input type="text" class="form-control" name="name" required>
+                    <!-- Personal Info -->
+                    <div class="form-grid">
+                        <div>
+                            <label>Full Name</label>
+                            <input type="text" name="name" placeholder="John Doe" required>
                         </div>
-                        <div class="form-group">
-                            <label>PHONE NUMBER</label>
-                            <input type="tel" class="form-control" name="phone" required>
+                        <div>
+                            <label>Phone Number</label>
+                            <input type="tel" name="phone" placeholder="(555) 123-4567" required>
                         </div>
-                    </div>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                        <div class="form-group">
-                            <label>EMAIL ADDRESS</label>
-                            <input type="email" class="form-control" name="email" required>
+                        <div>
+                            <label>Email Address</label>
+                            <input type="email" name="email" placeholder="john@example.com" required>
                         </div>
-                        <div class="form-group">
-                            <label>PROPERTY LOCATION (CITY, STATE)</label>
-                            <input type="text" class="form-control" name="location" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>PROJECT BUDGET</label>
-                        <select class="form-control" name="budget">
-                            <option value="Under $1,000">Under $1,000 (Minor Repair)</option>
-                            <option value="$1,000 - $5,000">$1,000 - $5,000 (Room/Ceiling)</option>
-                            <option value="$5,000+">$5,000+ (Remodel/New Construction)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>IS THIS AN EMERGENCY? (e.g., Active water damage)</label>
-                        <div class="radio-group">
-                            <label><input type="radio" name="emergency" value="Yes" required> YES</label>
-                            <label><input type="radio" name="emergency" value="No"> NO</label>
+                        <div>
+                            <label>Property Location</label>
+                            <input type="text" name="location" placeholder="City, State" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label>PROJECT DESCRIPTION</label>
-                        <textarea class="form-control" name="description" rows="5" placeholder="Describe the damage, room size, or goals..." required></textarea>
+
+                    <!-- Budget & Emergency -->
+                    <label>Project Budget</label>
+                    <select name="budget" required style="margin-bottom: 20px;">
+                        <option value="">Select an estimated budget...</option>
+                        <option value="Under $1,000">Under $1,000 (Minor Repair)</option>
+                        <option value="$1,000 - $5,000">$1,000 - $5,000 (Room/Ceiling)</option>
+                        <option value="$5,000+">$5,000+ (Remodel/New Construction)</option>
+                    </select>
+
+                    <label>Is this an emergency? (e.g., Active water damage)</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="emergency" value="Yes" required> YES</label>
+                        <label><input type="radio" name="emergency" value="No"> NO</label>
                     </div>
-                    <button type="submit" class="btn btn-solid" style="width: 100%; margin-top: 10px;">SUBMIT PROJECT DETAILS</button>
+
+                    <!-- Description -->
+                    <label>Project Description</label>
+                    <textarea name="description" rows="6" placeholder="Describe the damage, room size, or goals..." required style="margin-bottom: 20px;"></textarea>
+
+                    <button type="submit" class="btn" style="width: 100%;">Submit Project Request</button>
                 </form>
             </div>
-        </section>
+        </div>
     </main>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-about">
-                <h3>HENDERSHOTT</h3>
-                <h4>DRYWALL & REPAIR LLC</h4>
-                <p>Based in Scott City, MO. We bring extreme precision and relentless hard work to the residential drywall trade.</p>
-            </div>
-            <div class="footer-links">
-                <h3>NAVIGATION</h3>
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="gallery.html">GALLERY</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>COMMUNICATIONS</h3>
-                <p><i class="fa-solid fa-phone"></i> (618) 702-7892</p>
-                <p><i class="fa-solid fa-envelope"></i> REQUESTS@HENDERSHOTT.COM</p>
-                <p><i class="fa-solid fa-location-crosshairs"></i> SE MISSOURI & SOUTHERN IL</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 HENDERSHOTT DRYWALL & REPAIR LLC. ALL RIGHTS RESERVED.</p>
-        </div>
-    </footer>
 </body>
 </html>
