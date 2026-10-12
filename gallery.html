@@ -4,82 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Hendershott Drywall & Repair LLC</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <div class="brand-wrapper">
-                <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 50 5 L 90 25 L 90 75 L 50 95 L 10 75 L 10 25 Z" fill="#050505" stroke="#8B008B" stroke-width="3"/>
-                    <path d="M 30 30 L 30 70 M 70 30 L 70 70 M 30 50 L 70 50" stroke="#E0E0E0" stroke-width="8" stroke-linecap="butt"/>
-                    <path d="M 50 15 L 50 85" stroke="#8B008B" stroke-width="2" opacity="0.5"/>
-                </svg>
-                <div class="brand-text">
-                    <h1>HENDERSHOTT</h1>
-                    <span>Drywall & Repair LLC</span>
-                </div>
-            </div>
-            <nav>
+    <aside class="sidebar">
+        <div>
+            <div class="sidebar-brand"><img src="logo.svg" alt="Logo"></div>
+            <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="gallery.html">GALLERY</a></li>
-                    <li><a href="testimonials.html">REVIEWS</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html" style="color: var(--amber);">Gallery</a></li>
+                    <li><a href="testimonials.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
-    </header>
+    </aside>
 
-    <main>
-        <section class="container">
-            <h2 class="section-title">PROJECT <span>ARCHIVE</span></h2>
-            <p style="text-align: center; font-size: 1.15rem; color: var(--metal-silver); margin-bottom: 60px; max-width: 700px; margin-inline: auto;">Visual evidence of our precision execution. Real project documentation coming soon.</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                <div style="background: var(--panel-dark); color: var(--white); height: 250px; display: flex; align-items: center; justify-content: center; border: 1px solid #333; border-bottom: 4px solid var(--purple-burst); font-family: 'Oswald', sans-serif; font-size: 1.4rem; letter-spacing: 2px;">CEILING WORK</div>
-                <div style="background: var(--panel-dark); color: var(--white); height: 250px; display: flex; align-items: center; justify-content: center; border: 1px solid #333; border-bottom: 4px solid var(--purple-burst); font-family: 'Oswald', sans-serif; font-size: 1.4rem; letter-spacing: 2px;">SEAMLESS TAPE</div>
-                <div style="background: var(--panel-dark); color: var(--white); height: 250px; display: flex; align-items: center; justify-content: center; border: 1px solid #333; border-bottom: 4px solid var(--purple-burst); font-family: 'Oswald', sans-serif; font-size: 1.4rem; letter-spacing: 2px;">DAMAGE REPAIR</div>
-                <div style="background: var(--panel-dark); color: var(--white); height: 250px; display: flex; align-items: center; justify-content: center; border: 1px solid #333; border-bottom: 4px solid var(--purple-burst); font-family: 'Oswald', sans-serif; font-size: 1.4rem; letter-spacing: 2px;">NEW CONSTRUCTION</div>
-                <div style="background: var(--panel-dark); color: var(--white); height: 250px; display: flex; align-items: center; justify-content: center; border: 1px solid #333; border-bottom: 4px solid var(--purple-burst); font-family: 'Oswald', sans-serif; font-size: 1.4rem; letter-spacing: 2px;">TEXTURE MATCHING</div>
-                <div style="background: var(--panel-dark); color: var(--white); height: 250px; display: flex; align-items: center; justify-content: center; border: 1px solid #333; border-bottom: 4px solid var(--purple-burst); font-family: 'Oswald', sans-serif; font-size: 1.4rem; letter-spacing: 2px;">BASEMENT FINISHING</div>
-            </div>
-        </section>
-
-        <section class="cta-banner">
-            <h2>READY TO ADD YOUR HOME TO THE ARCHIVE?</h2>
-            <a href="contact.html" class="btn btn-solid">START YOUR PROJECT</a>
-        </section>
+    <main class="main-content">
+        <h1 class="page-title">Project <span>Archive</span></h1>
+        <p class="page-subtitle">Visual evidence of our precision execution. Real project documentation coming soon.</p>
+        
+        <div class="grid-3">
+            <div class="card" style="text-align: center; border-top: 4px solid var(--amber);"><h3>Ceiling Work</h3></div>
+            <div class="card" style="text-align: center; border-top: 4px solid var(--amber);"><h3>Seamless Tape</h3></div>
+            <div class="card" style="text-align: center; border-top: 4px solid var(--amber);"><h3>Damage Repair</h3></div>
+            <div class="card" style="text-align: center; border-top: 4px solid var(--amber);"><h3>New Construction</h3></div>
+            <div class="card" style="text-align: center; border-top: 4px solid var(--amber);"><h3>Texture Matching</h3></div>
+            <div class="card" style="text-align: center; border-top: 4px solid var(--amber);"><h3>Basement Finishing</h3></div>
+        </div>
     </main>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-about">
-                <h3>HENDERSHOTT</h3>
-                <h4>DRYWALL & REPAIR LLC</h4>
-                <p>Based in Scott City, MO. We bring extreme precision and relentless hard work to the residential drywall trade.</p>
-            </div>
-            <div class="footer-links">
-                <h3>NAVIGATION</h3>
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="gallery.html">GALLERY</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>COMMUNICATIONS</h3>
-                <p><i class="fa-solid fa-phone"></i> (618) 702-7892</p>
-                <p><i class="fa-solid fa-envelope"></i> REQUESTS@HENDERSHOTT.COM</p>
-                <p><i class="fa-solid fa-location-crosshairs"></i> SE MISSOURI & SOUTHERN IL</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 HENDERSHOTT DRYWALL & REPAIR LLC. ALL RIGHTS RESERVED.</p>
-        </div>
-    </footer>
 </body>
 </html>
