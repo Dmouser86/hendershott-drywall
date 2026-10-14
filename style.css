@@ -1,298 +1,217 @@
-:root {
-    --primary-red: #b31b1b;
-    --dark-charcoal: #1a1a1a;
-    --light-bg: #f4f3ef;
-    --text-color: #333;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Impact', 'Arial Black', sans-serif; /* Give headings that heavy industrial look */
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--light-bg);
-    color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden;
+    color: #222;
+    background-color: #f4f3ef; /* Warm, vintage off-white background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, .btn {
     font-family: 'Impact', 'Arial Black', sans-serif;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
 }
 
-/* Sticky Header with Shadow */
 header {
-    background-color: var(--dark-charcoal);
-    border-bottom: 4px solid var(--primary-red);
-    padding: 0.8rem 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    background: #1a1a1a; /* Dark charcoal */
+    border-bottom: 5px solid #b31b1b; /* Crimson Red border */
+    padding: 1.5rem 0;
 }
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.brand-wrapper {
+/* Flex wrapper for the brand identity */
+.brand {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
 .brand-logo {
-    width: 65px;
-    height: auto;
-    transition: transform 0.3s ease;
+    height: 60px; /* Sized for the badge */
+    width: auto;
+    border-radius: 50%; /* Keeps circular look */
 }
 
-.brand-logo:hover {
-    transform: rotate(-5deg) scale(1.05);
-}
-
-.nav-container h1 {
-    color: #fff;
+header h1 {
     font-size: 1.8rem;
-    text-shadow: 2px 2px 0px #000;
+    color: #fff;
+    text-shadow: 2px 2px #000;
 }
 
-.nav-container h1 span {
-    color: var(--primary-red);
+header h1 span {
+    color: #b31b1b; /* Accent red */
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
 }
 
-nav a {
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
     font-size: 1.1rem;
-    text-transform: uppercase;
-    position: relative;
-    padding-bottom: 5px;
+    transition: color 0.2s ease;
 }
 
-/* Slick Underline Hover Effect for Nav */
-nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--primary-red);
-    transition: width 0.3s ease;
+nav ul li a:hover {
+    color: #b31b1b;
 }
 
-nav a:hover::after {
-    width: 100%;
-}
-
-/* Hero Section with Parallax Feel */
 .hero {
-    background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.8)), url('hero-bg.jpg') center/cover fixed;
-    background-color: var(--dark-charcoal);
+    background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), url('hero-bg.jpg') no-repeat center center/cover;
+    /* (Opt: put a cool drywall/construction pic in the folder named hero-bg.jpg later) */
+    background-color: #1a1a1a; 
     color: #fff;
+    padding: 80px 20px;
     text-align: center;
-    padding: 120px 20px;
-    border-bottom: 5px solid var(--primary-red);
+    border-bottom: 5px solid #b31b1b;
 }
 
 .hero h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     color: #fff;
-    text-shadow: 3px 3px 0px var(--primary-red);
+    text-shadow: 3px 3px #b31b1b;
     margin-bottom: 15px;
-    animation: slideDown 0.8s ease-out;
 }
 
 .hero p {
-    font-size: 1.3rem;
-    max-width: 800px;
-    margin: 0 auto 35px;
-    color: #ddd;
-    animation: fadeIn 1.2s ease-out;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+    color: #e0e0e0;
 }
 
-/* Modern Grid Layouts */
 .container {
-    max-width: 1200px;
-    margin: 60px auto;
+    max-width: 1100px;
+    margin: 40px auto;
     padding: 0 20px;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.8rem;
-    color: var(--dark-charcoal);
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 5px;
-    background: var(--primary-red);
-    margin: 10px auto 0;
-}
-
-/* Feature Cards */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
 }
 
 .card {
     background: #fff;
-    padding: 40px 30px;
-    border-top: 6px solid var(--dark-charcoal);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    text-align: center;
+    padding: 30px;
+    border-left: 6px solid #b31b1b; /* Heavy industrial border accent */
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    border-top-color: var(--primary-red);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-.card h3 {
-    font-size: 1.8rem;
+.card h2 {
+    font-size: 2rem;
+    color: #1a1a1a;
     margin-bottom: 15px;
-    color: var(--dark-charcoal);
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
 }
 
-/* Badass Buttons */
+.services-list ul {
+    list-style: none;
+}
+
+.services-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+}
+
+.services-list li strong {
+    color: #b31b1b;
+}
+
 .btn {
     display: inline-block;
-    background: var(--primary-red);
+    background: #b31b1b;
     color: #fff;
-    padding: 15px 35px;
+    padding: 12px 30px;
     text-decoration: none;
-    font-family: 'Impact', 'Arial Black', sans-serif;
     font-size: 1.2rem;
-    letter-spacing: 1px;
-    border: 3px solid var(--primary-red);
-    text-transform: uppercase;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    border: 2px solid #b31b1b;
+    border-radius: 0px; /* Flat, heavy corners match the badge vibe */
+    transition: all 0.2s ease-in-out;
 }
 
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 0; height: 100%;
-    background: var(--dark-charcoal);
-    z-index: -1;
-    transition: width 0.3s ease;
+.btn:hover {
+    background: #1a1a1a;
+    color: #b31b1b;
+    border-color: #b31b1b;
 }
 
-.btn:hover::before {
-    width: 100%;
-}
-
-.btn-outline {
+.btn-secondary {
     background: transparent;
-    border: 3px solid #fff;
     color: #fff;
-    margin-left: 15px;
+    border: 2px solid #fff;
+    margin-left: 10px;
 }
 
-.btn-outline::before {
+.btn-secondary:hover {
     background: #fff;
+    color: #1a1a1a;
 }
 
-.btn-outline:hover {
-    color: var(--dark-charcoal);
-}
-
-/* Call to Action Banner */
-.cta-banner {
-    background: var(--primary-red);
-    color: #fff;
+.badge-gallery {
     text-align: center;
-    padding: 60px 20px;
-    margin-top: 60px;
+    margin-bottom: 30px;
 }
 
-.cta-banner h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.badge-gallery img {
+    max-width: 280px;
+    height: auto;
 }
 
-.cta-banner .btn {
-    background: var(--dark-charcoal);
-    border-color: var(--dark-charcoal);
-}
-
-.cta-banner .btn::before {
-    background: #fff;
-}
-
-.cta-banner .btn:hover {
-    color: var(--dark-charcoal);
-}
-
-/* Animations */
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.animate-up {
-    animation: slideDown 0.8s ease-out reverse backwards;
-}
-
-/* Footer */
 footer {
-    background: var(--dark-charcoal);
-    color: #888;
+    background: #1a1a1a;
+    color: #a0a0a0;
     text-align: center;
-    padding: 30px;
-    border-top: 5px solid var(--primary-red);
+    padding: 20px 0;
+    border-top: 5px solid #b31b1b;
+    margin-top: 60px;
+    font-size: 0.9rem;
 }
 
-/* Mobile Fixes */
+footer p {
+    font-family: 'Segoe UI', sans-serif;
+}
+
 @media (max-width: 768px) {
-    .nav-container {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .brand {
         flex-direction: column;
     }
     nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+        margin-top: 20px;
+    }
+    nav ul li {
+        margin: 0 10px;
     }
     .hero h2 {
-        font-size: 2.8rem;
+        font-size: 2.2rem;
     }
-    .btn-outline {
+    .btn-secondary {
         margin-left: 0;
-        margin-top: 15px;
+        margin-top: 10px;
         display: block;
     }
 }
