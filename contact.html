@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Service & 24/7 Emergency | Hendershott Drywall & Repair LLC</title>
+  <meta name="description" content="Hendershott Drywall &amp; Repair LLC provides professional drywall hanging, taping, mudding, Level 5 finishing, ceiling texture matching, and 24/7 emergency drywall repair in Scott City and Southeast Missouri." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Emergency & Contact Bar -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <button type="button" class="emergency-pill" onclick="openEmergencyRequest()">🚨 24/7 Emergency Drywall &amp; Ceiling Repair</button>
+        <span>📍 Serving Scott City, MO &amp; Southeast Missouri</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:6187027892">📞 (618) 702-7892</a>
+        <a href="mailto:kevin@hendershottdrywall.com">✉️ kevin@hendershottdrywall.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header & Navigation -->
+  <header>
+    <nav class="nav">
+      <div class="brand" onclick="switchPage('home')">
+        <img data-asset="logo" src="assets/logo.png" alt="Hendershott Drywall &amp; Repair LLC Logo" class="brand-logo-img" />
+        <div>
+          <div class="brand-name">Hendershott <span>Drywall &amp; Repair</span></div>
+          <div class="brand-sub">Drywall Hanging • Finishing • Ceiling &amp; Patch Repair • LLC</div>
+        </div>
+      </div>
+
+      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <button type="button" class="nav-link" id="nav-home" onclick="switchPage('home')">Home</button>
+        <button type="button" class="nav-link" id="nav-services" onclick="switchPage('services')">Drywall Services</button>
+        <button type="button" class="nav-link" id="nav-about" onclick="switchPage('about')">About Us</button>
+        <button type="button" class="nav-link" id="nav-gallery" onclick="switchPage('gallery')">Project Photos</button>
+        <button type="button" class="nav-link active" id="nav-contact" onclick="switchPage('contact')">Request Service</button>
+      </div>
+
+      <div class="nav-actions">
+        <button type="button" class="btn btn-emergency" onclick="openEmergencyRequest()">🚨 Emergency Help</button>
+        <button type="button" class="btn btn-primary" onclick="switchPage('contact')">Free Estimate</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ==================== PAGE 1: HOME ==================== -->
+    <div id="page-home" class="page-view">
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-badge">✓ Hendershott Drywall &amp; Repair LLC • Southeast Missouri</div>
+            <h1>Expert Drywall Hanging, Finishing &amp; <span>Seamless Repair.</span></h1>
+            <p>
+              From whole-home new construction sheetrock, vaulted coffered ceilings, and custom archways to invisible patch repairs and urgent water-damaged ceiling tear-outs, Kevin Hendershott delivers rock-solid drywall craftsmanship done right the first time.
+            </p>
+            <div class="hero-cta-group">
+              <button type="button" class="btn btn-primary" onclick="switchPage('contact')">Request a Free Drywall Estimate →</button>
+              <button type="button" class="btn btn-emergency" onclick="openEmergencyRequest()">🚨 24/7 Emergency Drywall Form</button>
+              <a href="tel:6187027892" class="btn btn-outline">📞 Call (618) 702-7892</a>
+            </div>
+            <div class="trust-strip">
+              <div class="trust-item">
+                <strong>100% Drywall Specialists</strong>
+                <span>Focused strictly on hanging, finishing, textures &amp; drywall repair</span>
+              </div>
+              <div class="trust-item">
+                <strong>Owner-Operated Quality</strong>
+                <span>Direct communication &amp; hands-on work by Kevin Hendershott</span>
+              </div>
+              <div class="trust-item">
+                <strong>Emergency Availability</strong>
+                <span>Fast response for ceiling leaks, sagging board &amp; urgent repairs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <h3 style="color: var(--brand-cream); margin-bottom: 0.35rem; font-size: 1.4rem;">Start Your Service Request</h3>
+            <p style="color: var(--brand-subtle); font-size: 0.9rem; margin-bottom: 1.2rem;">Tell us what drywall work you need and whether it's an emergency:</p>
+            <form id="quickHeroForm" onsubmit="handleQuickFormSubmit(event)">
+              <div class="form-group">
+                <label for="quickUrgency">Is this an emergency?</label>
+                <select name="urgency" id="quickUrgency" class="form-control">
+                  <option value="standard">No — Standard Drywall Estimate / Scheduled Job</option>
+                  <option value="urgent">Soon — Time-Sensitive / Inspection / Move-In</option>
+                  <option value="emergency">🚨 YES — Emergency (Sagging Ceiling / Water Damage)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="quickService">Drywall Work Needed</label>
+                <select name="service" id="quickService" class="form-control">
+                  <option value="Drywall Repair, Holes & Patching">Drywall Repair, Holes &amp; Patching</option>
+                  <option value="New Drywall Hanging & Installation">New Drywall Hanging &amp; Installation</option>
+                  <option value="Taping, Mudding & Level 5 Finish">Taping, Mudding &amp; Level 5 Finish</option>
+                  <option value="Ceiling Drywall & Texture Matching">Ceiling Drywall &amp; Texture Matching</option>
+                  <option value="Custom Ceilings, Archways & Fireplaces">Custom Ceilings, Archways &amp; Fireplaces</option>
+                  <option value="Emergency Water-Damaged Drywall">Emergency Water-Damaged Drywall Repair</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Continue to Online Form →</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Specialties Section -->
+      <section>
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">What We Do</span>
+            <h2>Specialized Drywall &amp; Ceiling Craftsmanship</h2>
+            <p>We don't spread ourselves thin across unrelated trades — we specialize strictly in professional drywall hanging, finishing, texturing, and repair.</p>
+          </div>
+
+          <div class="grid-3">
+            <div class="card">
+              <div>
+                <div class="card-icon">📐</div>
+                <h3>New Drywall Hanging &amp; Custom Framing</h3>
+                <p>Complete sheetrock hanging for new homes, room additions, basements, vaulted ceilings, and custom architectural features.</p>
+                <ul class="card-list">
+                  <li>1/2" &amp; 5/8" fire-rated and moisture-resistant board</li>
+                  <li>Vaulted, coffered &amp; tray ceiling drywall installation</li>
+                  <li>Arched doorways, fireplace chases &amp; stair soffits</li>
+                </ul>
+              </div>
+              <button type="button" class="btn btn-outline" onclick="selectServiceAndNavigate('New Drywall Hanging & Installation', 'standard')">Explore Hanging Services</button>
+            </div>
+
+            <div class="card">
+              <div>
+                <div class="card-icon">✨</div>
+                <h3>Taping, Mudding &amp; Level 5 Finishes</h3>
+                <p>Multi-coat taping, bed coats, skim coating, and precision sanding for dead-flat seams that never show through paint.</p>
+                <ul class="card-list">
+                  <li>Crack-resistant paper &amp; mesh joint taping</li>
+                  <li>Crisp metal, vinyl &amp; bullnose corner beads</li>
+                  <li>Smooth Level 4 &amp; Level 5 full-wall skim coats</li>
+                </ul>
+              </div>
+              <button type="button" class="btn btn-outline" onclick="selectServiceAndNavigate('Taping, Mudding & Level 5 Finish', 'standard')">Explore Finishing Services</button>
+            </div>
+
+            <div class="card">
+              <div>
+                <div class="card-icon">🚨</div>
+                <h3>Drywall Patching &amp; Emergency Repairs</h3>
+                <p>Invisible wall and ceiling repairs for holes, cracks, plumbing cutouts, and emergency water-soaked or sagging drywall.</p>
+                <ul class="card-list">
+                  <li>Seamless knockdown, orange peel &amp; texture matching</li>
+                  <li>Safe tear-out &amp; replacement of water-damaged ceilings</li>
+                  <li>Fast turnaround for urgent property repairs</li>
+                </ul>
+              </div>
+              <button type="button" class="btn btn-emergency" onclick="openEmergencyRequest()">Request Emergency Repair</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Material & Scope Estimator -->
+      <section style="background: var(--brand-dark-2); border-top: 1px solid var(--brand-border); border-bottom: 1px solid var(--brand-border);">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">Project Planning Tool</span>
+            <h2>Drywall Sheet &amp; Scope Estimator</h2>
+            <p>Planning a new room, basement, or ceiling repair? Calculate your approximate sheetrock and finishing requirements and send them directly with your estimate request.</p>
+          </div>
+
+          <div class="calc-box">
+            <div>
+              <div class="grid-2" style="gap: 1rem;">
+                <div class="form-group">
+                  <label for="calcLength">Room Length (ft)</label>
+                  <input type="number" id="calcLength" class="form-control" value="16" min="2" max="200" oninput="updateDrywallCalculator()" />
+                </div>
+                <div class="form-group">
+                  <label for="calcWidth">Room Width (ft)</label>
+                  <input type="number" id="calcWidth" class="form-control" value="14" min="2" max="200" oninput="updateDrywallCalculator()" />
+                </div>
+              </div>
+              <div class="grid-2" style="gap: 1rem;">
+                <div class="form-group">
+                  <label for="calcHeight">Ceiling Height (ft)</label>
+                  <select id="calcHeight" class="form-control" onchange="updateDrywallCalculator()">
+                    <option value="8">8 ft Standard Ceiling</option>
+                    <option value="9">9 ft Ceiling</option>
+                    <option value="10">10 ft High Ceiling</option>
+                    <option value="12">12 ft Vaulted / Great Room</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="calcIncludeCeiling">Include Ceiling Board?</label>
+                  <select id="calcIncludeCeiling" class="form-control" onchange="updateDrywallCalculator()">
+                    <option value="yes">Yes — Walls + Ceiling</option>
+                    <option value="walls">Walls Only</option>
+                    <option value="ceiling">Ceiling Only</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="calcFinishLevel">Target Finish Specification</label>
+                <select id="calcFinishLevel" class="form-control" onchange="updateDrywallCalculator()">
+                  <option value="Level 4 Smooth (Standard Paint-Ready)">Level 4 Smooth (Standard Paint-Ready)</option>
+                  <option value="Level 5 Full Skim Coat (Critical Lighting)">Level 5 Full Skim Coat (Critical Lighting)</option>
+                  <option value="Knockdown / Orange Peel Ceiling Texture">Knockdown / Orange Peel Texture Match</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="calc-result">
+              <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-red); font-weight: 800;">Estimated Material Breakdown</div>
+              <div class="calc-stat-grid">
+                <div class="calc-stat">
+                  <div class="num" id="calcSqFtOut">704 sq ft</div>
+                  <div class="lbl">Total Surface Area</div>
+                </div>
+                <div class="calc-stat">
+                  <div class="num" id="calcSheetsOut">25 sheets</div>
+                  <div class="lbl">4'×8' Drywall Sheets (+10% waste)</div>
+                </div>
+                <div class="calc-stat">
+                  <div class="num" id="calcMudOut">4 buckets</div>
+                  <div class="lbl">Joint Compound (All-Purpose/Topping)</div>
+                </div>
+                <div class="calc-stat">
+                  <div class="num" id="calcTapeOut">275 ft</div>
+                  <div class="lbl">Paper / Mesh Joint Tape</div>
+                </div>
+              </div>
+              <p style="font-size: 0.82rem; color: var(--brand-subtle); margin-bottom: 1rem;">
+                Every job is measured in person by Kevin Hendershott for an exact, written quote covering materials, hanging, mudding, and cleanup.
+              </p>
+              <button type="button" class="btn btn-primary" style="width: 100%;" onclick="attachCalcToEstimate()">Attach Specs to Free Estimate Form →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Work Section -->
+      <section>
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">Featured Work</span>
+            <h2>See Our Recent Drywall Projects</h2>
+            <p>Real examples of our hanging, taping, coffered ceilings, archways, and finishing work across Southeast Missouri.</p>
+          </div>
+
+          <div class="grid-3">
+            <div class="gallery-card" onclick="openPhotoModal(0)">
+              <div class="gallery-img-wrap">
+                <span class="gallery-tag">Coffered Ceiling &amp; Fireplace</span>
+                <img src="assets/photos/1926.jpg" alt="Vaulted Coffered Ceiling and Fireplace Drywall Finishing" />
+              </div>
+              <div class="gallery-body">
+                <div>
+                  <h3>Vaulted Coffered Ceiling &amp; Fireplace Surround</h3>
+                  <p>Precision corner bead work, recessed beam detailing, and multi-pass joint compound finishing.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openPhotoModal(1)">
+              <div class="gallery-img-wrap">
+                <span class="gallery-tag">Two-Story Great Room</span>
+                <img src="assets/photos/1929.jpg" alt="Two-Story Great Room Window Wall Drywall" />
+              </div>
+              <div class="gallery-body">
+                <div>
+                  <h3>Two-Story Window Wall &amp; High Ceiling Finish</h3>
+                  <p>High-scaffold sheetrock hanging and clean seam finishing around multi-tier wood casement windows.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openPhotoModal(2)">
+              <div class="gallery-img-wrap">
+                <span class="gallery-tag">Custom Archway &amp; Texture</span>
+                <img src="assets/photos/1855.jpg" alt="Custom Arched Doorway and Textured Drywall Finish" />
+              </div>
+              <div class="gallery-body">
+                <div>
+                  <h3>Custom Arched Opening &amp; Patterned Texture</h3>
+                  <p>Smooth contoured archway returns paired with consistent wall and ceiling texture coverage.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 2.25rem;">
+            <button type="button" class="btn btn-cream" onclick="switchPage('gallery')">View Full Project Gallery (All 6 Photos) →</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE 2: DRYWALL SERVICES ==================== -->
+    <div id="page-services" class="page-view">
+      <section style="background: var(--brand-dark-2); border-bottom: 1px solid var(--brand-border); padding: 3rem 1.25rem;">
+        <div class="container">
+          <div class="section-header" style="margin-bottom: 0;">
+            <span class="section-eyebrow">100% Drywall &amp; Ceiling Specialists</span>
+            <h2>Complete Drywall Hanging, Finishing &amp; Repair Services</h2>
+            <p>Serving homeowners, custom home builders, and commercial property managers in Scott City, Cape Girardeau, Sikeston, Jackson, and surrounding Southeast Missouri communities.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="grid-3">
+            <div class="card">
+              <div>
+                <div class="card-icon">🔨</div>
+                <h3>New Drywall Hanging &amp; Installation</h3>
+                <p>Tight-fitting board installation for new residential builds, basement finish-outs, garages, and room additions.</p>
+                <ul class="card-list">
+                  <li>1/2" regular &amp; lightweight gypsum board hanging</li>
+                  <li>5/8" Type X fire-rated board for garages &amp; ceilings</li>
+                  <li>Moisture &amp; mold-resistant board for baths &amp; basements</li>
+                  <li>Glue-and-screw fastening to prevent future nail pops</li>
+                </ul>
+              </div>
+              <button type="button" class="btn btn-primary" onclick="selectServiceAndNavigate('New Drywall Hanging & Installation', 'standard')">Request Hanging Quote →</button>
+            </div>
+
+            <div class="card">
+              <div>
+                <div class="card-icon">✨</div>
+                <h3>Taping, Mudding &amp; Level 5 Finish</h3>
+                <p>Flawless joint taping, feathering, and finish sanding engineered to look smooth even under harsh natural window light.</p>
+                <ul class="card-list">
+                  <li>High-strength paper tape &amp; fiberglass mesh joints</li>
+                  <li>3-coat taping, fill, and wide feathering passes</li>
+                  <li>Level 5 full-surface skim coating for luxury interiors</li>
+                  <li>Low-dust vacuum sanding &amp; primer-ready inspection</li>
+                </ul>
+              </div>
+              <button type="button" class="btn btn-primary" onclick="selectServiceAndNavigate('Taping, Mudding & Level 5 Finish', 'standard')">Request Finishing Quote →</button>
+            </div>
+
+            <div class="card">
+              <div>
+                <div class="card-icon">🛠️</div>
+                <h3>Drywall Repair, Holes &amp; Patching</h3>
+                <p>Permanent structural patches for damaged walls and ceilings that blend invisibly into surrounding surfaces.</p>
+                <ul class="card-list">
+                  <li>Doorknob holes, moving damage &amp; anchor tear-outs</li>
+                  <li>Plumbing, electrical &amp; HVAC access cutout restoration</li>
+                  <li>House settling cracks &amp; corner bead impact repairs</li>
+                  <li>Wood backing installation for rock-solid patch support</li>
+                </ul>
+              </div>
+              <button type="button" class="btn btn-primary" onclick="selectServiceAndNavigate('Drywall Repair, Holes & Patching', 'standard')">Book Patch Repair →</button>
+            </div>
+
+            <div class="card">
+              <div>
+                <div class="card-icon">🎨</div>
+                <h3>Ceiling Drywall &amp; Texture Matching</h3>
+                <p>Matching existing ceiling and wall textures requires a trained eye and the right spray/trowel technique so patches disappear.</p>
+                <ul class="card-list">
+                  <li>Knockdown, orange peel &amp; splatter texture blending</li>
+                  <li>Hand-troweled skip trowel, swirl &amp; slap-brush patterns</li>
+                  <li>Popcorn ceiling scraping, re-taping &amp; slick finish conversion</li>
+                  <li>Sagging ceiling board re-fastening &amp; seam reinforcement</li>
+                </ul>
+              </div>
+              <button type="button" class="btn btn-primary" onclick="selectServiceAndNavigate('Ceiling Drywall & Texture Matching', 'standard')">Request Texture Match →</button>
+            </div>
+
+            <div class="card">
+              <div>
+                <div class="card-icon">🏛️</div>
+                <h3>Custom Ceilings, Archways &amp; Fireplaces</h3>
+                <p>Architectural drywall detailing that turns standard rooms into custom showcase spaces.</p>
+                <ul class="card-list">
+                  <li>Vaulted, cathedral, tray &amp; recessed coffered ceilings</li>
+                  <li>Smooth contoured arched openings &amp; bullnose returns</li>
+                  <li>Floor-to-ceiling fireplace chases &amp; TV niche framing</li>
+                  <li>High-scaffold 2-story great room &amp; stairwell sheetrock</li>
+                </ul>
+              </div>
+              <button type="button" class="btn btn-primary" onclick="selectServiceAndNavigate('Custom Ceilings, Archways & Fireplaces', 'standard')">Discuss Custom Project →</button>
+            </div>
+
+            <div class="card" style="border-color: rgba(200, 30, 43, 0.6);">
+              <div>
+                <div class="card-icon">🚨</div>
+                <h3>24/7 Emergency Water-Damaged Drywall</h3>
+                <p>Roof leak, burst pipe, or overflowing upstairs bath? Wet ceiling drywall can collapse suddenly and trap moisture.</p>
+                <ul class="card-list">
+                  <li>Rapid containment &amp; safe tear-out of soaked drywall</li>
+                  <li>Removal of saturated attic or ceiling cavity insulation</li>
+                  <li>Open-framing air circulation prep before re-hanging</li>
+                  <li>Complete 5/8" ceiling replacement, mudding &amp; texture</li>
+                </ul>
+              </div>
+              <button type="button" class="btn btn-emergency" onclick="openEmergencyRequest()">🚨 24/7 Emergency Dispatch →</button>
+            </div>
+          </div>
+
+          <!-- Interactive Finish Level Comparison -->
+          <div style="margin-top: 3.5rem; background: var(--brand-card); border: 1px solid var(--brand-border); border-radius: var(--radius-lg); padding: 2rem;">
+            <span class="section-eyebrow">Craftsmanship Standards</span>
+            <h3 style="font-size: 1.5rem; color: var(--brand-cream); margin-bottom: 0.75rem;">Compare Gypsum Finish Levels</h3>
+            <p style="color: var(--brand-subtle); font-size: 0.92rem; margin-bottom: 1.25rem;">Click a finish level below to see how we prepare your walls and ceilings for texture or paint:</p>
+
+            <div class="level-tabs">
+              <button type="button" class="level-tab active" id="lvlBtn3" onclick="showFinishLevel(3)">Level 3 (Texture Ready)</button>
+              <button type="button" class="level-tab" id="lvlBtn4" onclick="showFinishLevel(4)">Level 4 (Standard Smooth)</button>
+              <button type="button" class="level-tab" id="lvlBtn5" onclick="showFinishLevel(5)">Level 5 (Skim Coat Perfection)</button>
+            </div>
+
+            <div id="finishLevelContent" style="background: #12161b; border: 1px solid var(--brand-border); border-radius: 10px; padding: 1.5rem;">
+              <h4 id="finishLevelTitle" style="color: var(--brand-cream); font-size: 1.15rem; margin-bottom: 0.4rem;">Level 3 — Heavy or Medium Texture Base</h4>
+              <p id="finishLevelDesc" style="color: #d1d5db; font-size: 0.94rem; margin-bottom: 0.75rem;">
+                Includes tape embedded in joint compound plus one additional bed coat over all joints, interior angles, and fastener heads. Ideal for ceilings or walls receiving knockdown or orange peel spray texture.
+              </p>
+              <div id="finishLevelBestFor" style="font-size: 0.84rem; color: var(--brand-red); font-weight: 700;">
+                Recommended For: Knockdown ceilings, orange peel walls, and textured remodel matching.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE 3: ABOUT US ==================== -->
+    <div id="page-about" class="page-view">
+      <section style="background: var(--brand-dark-2); border-bottom: 1px solid var(--brand-border); padding: 3rem 1.25rem;">
+        <div class="container">
+          <div class="section-header" style="margin-bottom: 0;">
+            <span class="section-eyebrow">About Hendershott Drywall &amp; Repair LLC</span>
+            <h2>Owner-Operated Drywall Craftsmanship in Southeast Missouri</h2>
+            <p>Direct accountability, clean job sites, and rock-solid finishes led personally by Kevin Hendershott.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="grid-2" style="align-items: center;">
+            <div>
+              <span class="section-eyebrow">Meet the Owner</span>
+              <h2 style="font-size: 2rem; color: var(--brand-cream); margin-bottom: 1rem; text-transform: uppercase;">Why Homeowners &amp; Builders Trust Kevin Hendershott</h2>
+              <p style="color: #d1d5db; margin-bottom: 1rem;">
+                Drywall is the canvas of your entire home. If board is hung loosely, corner beads aren't plumb, or seams aren't feathered properly, every flaw shows up the moment sunlight hits your walls.
+              </p>
+              <p style="color: #d1d5db; margin-bottom: 1rem;">
+                Based in <strong>Scott City, MO</strong>, Kevin Hendershott built <strong>Hendershott Drywall &amp; Repair LLC</strong> on a simple promise: specialize 100% in drywall and ceiling work, show up when promised, protect the homeowner's floors and furniture, and never leave a job until every seam and texture transition is right.
+              </p>
+              <ul class="card-list" style="margin-bottom: 1.5rem;">
+                <li>Direct owner communication from initial estimate to final sanding</li>
+                <li>Dedicated 24/7 response for emergency ceiling leaks and water damage</li>
+                <li>Transparent written estimates with clear material and labor breakdowns</li>
+                <li>Serving Scott City, Cape Girardeau, Jackson, Sikeston, Advance, Chaffee &amp; SEMO</li>
+              </ul>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                <button type="button" class="btn btn-primary" onclick="switchPage('contact')">Get a Personal Estimate from Kevin →</button>
+                <a href="tel:6187027892" class="btn btn-outline">📞 Call (618) 702-7892</a>
+              </div>
+            </div>
+
+            <div class="card" style="text-align: center; align-items: center; padding: 2.25rem;">
+              <img src="assets/logo.png" alt="Hendershott Drywall &amp; Repair LLC Badge" style="width: 170px; height: auto; margin-bottom: 1rem;" />
+              <h3 style="font-size: 1.45rem;">Hendershott Drywall &amp; Repair LLC</h3>
+              <p style="margin-bottom: 1rem;">Scott City, Missouri 63780 • Southeast Missouri</p>
+              <div style="width: 100%; text-align: left; background: #12161b; padding: 1.2rem; border-radius: 10px; border: 1px solid var(--brand-border);">
+                <div style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Owner:</strong> Kevin Hendershott</div>
+                <div style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Base Location:</strong> Scott City, MO 63780</div>
+                <div style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Phone / Text:</strong> <a href="tel:6187027892" style="color: var(--brand-cream); text-decoration: underline;">(618) 702-7892</a></div>
+                <div style="font-size: 0.85rem;"><strong>Email:</strong> <a href="mailto:kevin@hendershottdrywall.com" style="color: var(--brand-cream); text-decoration: underline;">kevin@hendershottdrywall.com</a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frequently Asked Questions -->
+          <div style="margin-top: 4rem;">
+            <div class="section-header">
+              <span class="section-eyebrow">Common Questions</span>
+              <h2>Drywall &amp; Repair FAQs</h2>
+              <p>Click any question below for answers on how we handle dust, drying times, texture matching, and emergency repairs.</p>
+            </div>
+
+            <div style="max-width: 860px; margin: 0 auto;">
+              <div class="faq-item open" id="faq-0">
+                <button type="button" class="faq-btn" onclick="toggleFaq(0)">
+                  <span>How do you keep drywall dust out of the rest of my house?</span>
+                  <span>▾</span>
+                </button>
+                <div class="faq-body">
+                  We treat your home with respect. Before any tear-out, hanging, or sanding begins, we lay down heavy-duty drop cloths, mask off adjacent doorways and vents with plastic sheeting, and use vacuum-assisted sanding equipment to keep airborne dust to an absolute minimum.
+                </div>
+              </div>
+
+              <div class="faq-item" id="faq-1">
+                <button type="button" class="faq-btn" onclick="toggleFaq(1)">
+                  <span>Can you match my existing knockdown or patterned ceiling texture?</span>
+                  <span>▾</span>
+                </button>
+                <div class="faq-body">
+                  Yes. Texture matching is one of our core specialties. Whether your ceiling has knockdown, orange peel, slap-brush, or hand-troweled texture, we feather the new compound into the surrounding area so the patch blends seamlessly once primed and painted.
+                </div>
+              </div>
+
+              <div class="faq-item" id="faq-2">
+                <button type="button" class="faq-btn" onclick="toggleFaq(2)">
+                  <span>How fast can you respond to an emergency ceiling leak or sagging drywall?</span>
+                  <span>▾</span>
+                </button>
+                <div class="faq-body">
+                  We offer 24/7 emergency dispatch across Scott City, Cape Girardeau, and Southeast Missouri. Call or text (618) 702-7892 or submit our Emergency Form so we can safely remove saturated board and wet insulation before the ceiling collapses further.
+                </div>
+              </div>
+
+              <div class="faq-item" id="faq-3">
+                <button type="button" class="faq-btn" onclick="toggleFaq(3)">
+                  <span>Why does mudding and finishing require multiple visits?</span>
+                  <span>▾</span>
+                </button>
+                <div class="faq-body">
+                  Proper drywall finishing cannot be rushed without risking shrinkage cracks. For smaller patches, we can often use rapid-setting "hot mud" compounds to finish faster, while whole-room taping and Level 5 skim coats require proper drying intervals between the tape coat, fill coat, and final finish coat.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE 4: PROJECT PHOTOS GALLERY ==================== -->
+    <div id="page-gallery" class="page-view">
+      <section style="background: var(--brand-dark-2); border-bottom: 1px solid var(--brand-border); padding: 3rem 1.25rem;">
+        <div class="container">
+          <div class="section-header" style="margin-bottom: 1.5rem;">
+            <span class="section-eyebrow">Portfolio &amp; Craftsmanship</span>
+            <h2>Recent Drywall &amp; Ceiling Project Gallery</h2>
+            <p>Browse all 6 featured projects below. Click any photo card to inspect project details, materials used, and scope of work.</p>
+          </div>
+
+          <div class="filter-bar">
+            <button type="button" class="filter-pill active" id="filter-all" onclick="filterGallery('all')">All 6 Projects</button>
+            <button type="button" class="filter-pill" id="filter-ceilings" onclick="filterGallery('ceilings')">Ceilings &amp; Custom</button>
+            <button type="button" class="filter-pill" id="filter-hanging" onclick="filterGallery('hanging')">New Hanging &amp; Great Rooms</button>
+            <button type="button" class="filter-pill" id="filter-finishing" onclick="filterGallery('finishing')">Level 5 &amp; Skim Coating</button>
+            <button type="button" class="filter-pill" id="filter-repair" onclick="filterGallery('repair')">Ceiling Patch &amp; Texture</button>
+          </div>
+
+          <div class="grid-3" id="galleryGrid">
+            <!-- Photo 0 -->
+            <div class="gallery-card" data-category="ceilings" onclick="openPhotoModal(0)">
+              <div class="gallery-img-wrap">
+                <span class="gallery-tag">Coffered Ceiling &amp; Fireplace</span>
+                <img src="assets/photos/1926.jpg" alt="Vaulted Coffered Ceiling and Fireplace Drywall Finishing" />
+              </div>
+              <div class="gallery-body">
+                <div>
+                  <h3>Vaulted Coffered Ceiling &amp; Fireplace Surround</h3>
+                  <p>Precision corner bead work, recessed beam detailing, and multi-pass joint compound finishing.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 1 -->
+            <div class="gallery-card" data-category="hanging" onclick="openPhotoModal(1)">
+              <div class="gallery-img-wrap">
+                <span class="gallery-tag">Two-Story Great Room</span>
+                <img src="assets/photos/1929.jpg" alt="Two-Story Great Room Window Wall Drywall" />
+              </div>
+              <div class="gallery-body">
+                <div>
+                  <h3>Two-Story Window Wall &amp; High Ceiling Finish</h3>
+                  <p>High-scaffold sheetrock hanging and clean seam finishing around multi-tier wood casement windows.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 2 -->
+            <div class="gallery-card" data-category="ceilings" onclick="openPhotoModal(2)">
+              <div class="gallery-img-wrap">
+                <span class="gallery-tag">Custom Archway &amp; Texture</span>
+                <img src="assets/photos/1855.jpg" alt="Custom Arched Doorway and Textured Drywall Finish" />
+              </div>
+              <div class="gallery-body">
+                <div>
+                  <h3>Custom Arched Opening &amp; Patterned Texture</h3>
+                  <p>Smooth contoured archway returns paired with consistent wall and ceiling texture coverage.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 3 -->
+            <div class="gallery-card" data-category="finishing" onclick="openPhotoModal(3)">
+              <div class="gallery-img-wrap">
+                <span class="gallery-tag">Level 5 Smooth Skim Coat</span>
+                <img src="assets/photos/level5-finish.jpg" alt="Level 5 Smooth Wall Skim Coat and Taping" />
+              </div>
+              <div class="gallery-body">
+                <div>
+                  <h3>Whole-Room Remodel &amp; Level 5 Smooth Finish</h3>
+                  <p>Full-wall skim coating, window return detailing, and dust-controlled floor protection ready for primer.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 4 -->
+            <div class="gallery-card" data-category="repair" onclick="openPhotoModal(4)">
+              <div class="gallery-img-wrap">
+                <span class="gallery-tag">Ceiling Patch &amp; Knockdown</span>
+                <img src="assets/photos/ceiling-patch.jpg" alt="Ceiling Water Damage Patch and Knockdown Texture Match" />
+              </div>
+              <div class="gallery-body">
+                <div>
+                  <h3>Water-Damaged Ceiling Cutout &amp; Knockdown Match</h3>
+                  <p>5/8" drywall replacement patch with taped perimeter seams and custom knockdown texture blending.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 5 -->
+            <div class="gallery-card" data-category="hanging" onclick="openPhotoModal(5)">
+              <div class="gallery-img-wrap">
+                <span class="gallery-tag">New Construction Sheetrock</span>
+                <img src="assets/photos/new-hanging.jpg" alt="New Construction 5/8 Drywall Hanging and Taping" />
+              </div>
+              <div class="gallery-body">
+                <div>
+                  <h3>Residential Addition Hanging &amp; Can Light Cutouts</h3>
+                  <p>Staggered 5/8" ceiling and wall sheetrock installation with precision recessed lighting cutouts and bed coats.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE 5: REQUEST SERVICE / CONTACT ==================== -->
+    <div id="page-contact" class="page-view active">
+      <section style="padding: 3rem 1.25rem;">
+        <div class="container">
+          <div class="emergency-alert-banner" id="emergencyBanner">
+            <div>
+              <strong style="color: #fff; font-size: 1.05rem; display: block;">🚨 24/7 Emergency Drywall &amp; Ceiling Response Mode Active</strong>
+              <span style="color: #fca5a5; font-size: 0.88rem;">For immediate dispatch on active ceiling leaks or sagging drywall, submit below or call <a href="tel:6187027892" style="text-decoration: underline; color: #fff; font-weight: 700;">(618) 702-7892</a> now.</span>
+            </div>
+            <button type="button" class="btn btn-outline" onclick="clearEmergencyMode()">Switch to Standard Estimate</button>
+          </div>
+
+          <div class="grid-2" style="align-items: start;">
+            <div class="hero-card" style="border-top-width: 4px;">
+              <span class="section-eyebrow">Online Service &amp; Estimate Form</span>
+              <h2 style="font-size: 1.8rem; color: var(--brand-cream); margin-bottom: 0.4rem;">Request Your Drywall Estimate</h2>
+              <p style="color: var(--brand-subtle); font-size: 0.9rem; margin-bottom: 1.4rem;">
+                Fill out your project details below. Kevin Hendershott reviews every request personally and responds promptly.
+              </p>
+
+              <form id="fullContactForm" onsubmit="handleFullContactSubmit(event)">
+                <div class="grid-2" style="gap: 1rem;">
+                  <div class="form-group">
+                    <label for="custName">Your Full Name *</label>
+                    <input type="text" id="custName" class="form-control" placeholder="e.g., John Smith" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="custPhone">Phone Number *</label>
+                    <input type="tel" id="custPhone" class="form-control" placeholder="(573) 555-0199" required />
+                  </div>
+                </div>
+
+                <div class="grid-2" style="gap: 1rem;">
+                  <div class="form-group">
+                    <label for="custEmail">Email Address</label>
+                    <input type="email" id="custEmail" class="form-control" placeholder="you@example.com" />
+                  </div>
+                  <div class="form-group">
+                    <label for="custCity">City / Town in SEMO *</label>
+                    <input type="text" id="custCity" class="form-control" placeholder="Scott City, Cape Girardeau, Jackson..." required />
+                  </div>
+                </div>
+
+                <div class="grid-2" style="gap: 1rem;">
+                  <div class="form-group">
+                    <label for="contactUrgency">Urgency Level *</label>
+                    <select id="contactUrgency" class="form-control" onchange="syncEmergencyBanner()">
+                      <option value="standard">No — Standard Drywall Estimate / Scheduled Job</option>
+                      <option value="urgent">Soon — Time-Sensitive / Inspection / Move-In</option>
+                      <option value="emergency">🚨 YES — Emergency (Sagging Ceiling / Water Damage)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="contactService">Drywall Service Needed *</label>
+                    <select id="contactService" class="form-control">
+                      <option value="Drywall Repair, Holes & Patching">Drywall Repair, Holes &amp; Patching</option>
+                      <option value="New Drywall Hanging & Installation">New Drywall Hanging &amp; Installation</option>
+                      <option value="Taping, Mudding & Level 5 Finish">Taping, Mudding &amp; Level 5 Finish</option>
+                      <option value="Ceiling Drywall & Texture Matching">Ceiling Drywall &amp; Texture Matching</option>
+                      <option value="Custom Ceilings, Archways & Fireplaces">Custom Ceilings, Archways &amp; Fireplaces</option>
+                      <option value="Emergency Water-Damaged Drywall">Emergency Water-Damaged Drywall Repair</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contactNotes">Project Scope, Room Size, or Damage Description *</label>
+                  <textarea id="contactNotes" class="form-control" rows="4" placeholder="Describe the rooms, approximate square footage, ceiling height, or type of repair needed..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="contactMethod">Preferred Contact Method</label>
+                  <select id="contactMethod" class="form-control">
+                    <option value="Phone Call">Phone Call</option>
+                    <option value="Text Message (SMS)">Text Message (SMS)</option>
+                    <option value="Email">Email</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem;">Submit Service &amp; Estimate Request →</button>
+              </form>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+              <div class="card">
+                <div>
+                  <span class="section-eyebrow">Direct Contact</span>
+                  <h3>Call, Text, or Email Kevin Directly</h3>
+                  <p>Prefer to talk through your project right now or text photos of a damaged wall or ceiling? Reach out directly:</p>
+                  <ul class="card-list">
+                    <li><strong>Phone:</strong> <a href="tel:6187027892" style="color: var(--brand-cream); text-decoration: underline;">(618) 702-7892</a></li>
+                    <li><strong>Text Photos:</strong> <a href="sms:6187027892" style="color: var(--brand-cream); text-decoration: underline;">(618) 702-7892</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:kevin@hendershottdrywall.com" style="color: var(--brand-cream); text-decoration: underline;">kevin@hendershottdrywall.com</a></li>
+                    <li><strong>Office / Dispatch:</strong> 1038 Oak Street Apt. A8, Scott City, MO 63780</li>
+                  </ul>
+                </div>
+                <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+                  <a href="tel:6187027892" class="btn btn-emergency" style="flex: 1;">📞 Call Now</a>
+                  <a href="sms:6187027892" class="btn btn-outline" style="flex: 1;">💬 Text Kevin</a>
+                </div>
+              </div>
+
+              <div class="card">
+                <div>
+                  <span class="section-eyebrow">Recent Submissions Log (Browser Preview)</span>
+                  <h3>Your Submitted Test Requests</h3>
+                  <p style="margin-bottom: 0.75rem;">Test the form on the left to preview how service requests are captured and formatted:</p>
+                  <div id="submissionsList" style="font-size: 0.85rem; color: var(--brand-subtle);">
+                    No test requests submitted in this session yet.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img data-asset="logo" src="assets/logo.png" alt="Hendershott Drywall &amp; Repair LLC Logo" style="height: 76px; width: auto; margin-bottom: 0.75rem;" />
+        <div class="brand-name" style="font-size: 1.1rem; margin-bottom: 0.4rem;">Hendershott <span>Drywall &amp; Repair LLC</span></div>
+        <p style="color: var(--brand-subtle); font-size: 0.9rem; margin-bottom: 0.85rem;">
+          Dedicated strictly to high-craftsmanship drywall hanging, taping, mudding, Level 5 finishing, texture matching, and emergency drywall repair across Southeast Missouri.
+        </p>
+        <p style="color: var(--brand-subtle); font-size: 0.82rem;">
+          © 2026 Hendershott Drywall &amp; Repair LLC (hendershottdrywall.com).
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><button type="button" class="footer-link-btn" onclick="switchPage('home')">Home</button></li>
+          <li><button type="button" class="footer-link-btn" onclick="switchPage('services')">Drywall Services</button></li>
+          <li><button type="button" class="footer-link-btn" onclick="switchPage('about')">About Kevin</button></li>
+          <li><button type="button" class="footer-link-btn" onclick="switchPage('gallery')">Project Photo Gallery</button></li>
+          <li><button type="button" class="footer-link-btn" onclick="switchPage('contact')">Online Estimate &amp; Emergency Form</button></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Drywall Specialties</h4>
+        <ul>
+          <li>New Construction &amp; Remodel Hanging</li>
+          <li>Taping, Mudding &amp; Level 5 Skim Coats</li>
+          <li>Vaulted, Coffered &amp; Tray Ceilings</li>
+          <li>Seamless Patching &amp; Texture Matching</li>
+          <li>24/7 Emergency Water-Damaged Drywall</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Direct Contact</h4>
+        <ul>
+          <li>📍 Scott City, MO &amp; Southeast Missouri</li>
+          <li>📞 <a href="tel:6187027892">(618) 702-7892</a></li>
+          <li>💬 <a href="sms:6187027892">Text (618) 702-7892</a></li>
+          <li>✉️ <a href="mailto:kevin@hendershottdrywall.com">kevin@hendershottdrywall.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Call / Text Bar -->
+  <div class="sticky-actions">
+    <a href="sms:6187027892" class="sticky-btn sticky-text">💬 Text (618) 702-7892</a>
+    <a href="tel:6187027892" class="sticky-btn sticky-call">📞 Call (618) 702-7892</a>
+  </div>
+
+  <!-- Photo Lightbox Modal -->
+  <div class="modal-backdrop" id="photoModal" onclick="closePhotoModalOnBackdrop(event)">
+    <div class="modal-box">
+      <button type="button" class="modal-close" onclick="closePhotoModal()" aria-label="Close Modal">✕</button>
+      <span class="section-eyebrow" id="modalTag">Featured Project</span>
+      <h3 id="modalTitle" style="font-size: 1.5rem; color: var(--brand-cream); margin-bottom: 0.75rem;">Project Title</h3>
+      <div style="border-radius: 10px; overflow: hidden; margin-bottom: 1rem; border: 1px solid var(--brand-border); background: #0b0d10;">
+        <img id="modalImg" src="assets/photos/1926.jpg" alt="Project Full View" style="width: 100%; max-height: 440px; object-fit: cover;" />
+      </div>
+      <p id="modalDesc" style="color: #d1d5db; font-size: 0.95rem; margin-bottom: 1rem;"></p>
+      <div id="modalSpecs" style="background: #12161b; padding: 0.9rem 1.1rem; border-radius: 8px; border: 1px solid var(--brand-border); font-size: 0.85rem; color: var(--brand-subtle); margin-bottom: 1.25rem;"></div>
+      <div style="display: flex; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap;">
+        <button type="button" class="btn btn-outline" onclick="closePhotoModal()">← Back to Gallery</button>
+        <button type="button" class="btn btn-primary" onclick="requestSimilarProject()">Request Similar Work →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form Submission Confirmation Modal -->
+  <div class="modal-backdrop" id="confirmModal" onclick="closeConfirmModalOnBackdrop(event)">
+    <div class="modal-box" style="max-width: 560px;">
+      <button type="button" class="modal-close" onclick="closeConfirmModal()" aria-label="Close Confirmation">✕</button>
+      <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">✅</div>
+      <h3 style="font-size: 1.5rem; color: var(--brand-cream); margin-bottom: 0.5rem;">Service Request Logged!</h3>
+      <p id="confirmSummaryText" style="color: #d1d5db; font-size: 0.94rem; margin-bottom: 1.2rem;"></p>
+      <div style="background: #12161b; border: 1px solid var(--brand-border); border-radius: 8px; padding: 1rem; margin-bottom: 1.25rem; font-size: 0.85rem; color: var(--brand-subtle);">
+        Want to send this directly to Kevin's phone or email right now? Use the quick-send buttons below:
+      </div>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a id="confirmSmsLink" href="sms:6187027892" class="btn btn-emergency" style="flex: 1;">💬 Send via Text</a>
+        <a id="confirmMailLink" href="mailto:kevin@hendershottdrywall.com" class="btn btn-primary" style="flex: 1;">✉️ Send via Email</a>
+        <button type="button" class="btn btn-outline" onclick="closeConfirmModal()">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
