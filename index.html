@@ -3,8 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | Hendershott Drywall & Repair LLC</title>
-  <meta name="description" content="Hendershott Drywall &amp; Repair LLC provides professional drywall hanging, taping, mudding, Level 5 finishing, ceiling texture matching, and 24/7 emergency drywall repair in Scott City and Southeast Missouri." />
+  <title>Hendershott Drywall & Repair LLC | Scott City & SEMO Sheetrock</title>
+  <meta name="description" content="Professional drywall hanging, taping, Level 5 finishing, knockdown texture matching, and 24/7 emergency water damage drywall repair in Scott City, Cape Girardeau, and Southeast Missouri." />
+  <link rel="canonical" href="https://hendershottdrywall.com/" />
+  
+  <!-- Open Graph / SEO Social Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hendershott Drywall & Repair LLC | Scott City & SEMO" />
+  <meta property="og:description" content="Hung Right. Taped Tight. Professional drywall installation, Level 5 finishing, and ceiling water-damage repair." />
+  <meta property="og:image" content="https://hendershottdrywall.com/logo.png" />
+  
+  <!-- Local Business Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DrywallContractor",
+    "name": "Hendershott Drywall & Repair LLC",
+    "image": "https://hendershottdrywall.com/logo.png",
+    "telephone": "+16187027892",
+    "email": "kevin@hendershottdrywall.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1038 Oak Street Apt A8",
+      "addressLocality": "Scott City",
+      "addressRegion": "MO",
+      "postalCode": "63780",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.2195,
+      "longitude": -89.5312
+    },
+    "areaServed": [
+      "Scott City",
+      "Cape Girardeau",
+      "Jackson",
+      "Sikeston",
+      "Advance",
+      "Chaffee",
+      "Southeast Missouri"
+    ],
+    "priceRange": "$$"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet" />
@@ -17,7 +60,7 @@
     <div class="top-bar-inner">
       <div class="top-bar-left">
         <button type="button" class="emergency-pill" onclick="openEmergencyRequest()">🚨 24/7 Emergency Drywall &amp; Ceiling Repair</button>
-        <span>📍 Serving Scott City, MO &amp; Southeast Missouri</span>
+        <span>📍 Serving Scott City, Cape Girardeau &amp; Southeast Missouri</span>
       </div>
       <div class="top-bar-right">
         <a href="tel:6187027892">📞 (618) 702-7892</a>
@@ -26,11 +69,11 @@
     </div>
   </div>
 
-  <!-- Main Header & Navigation -->
+  <!-- Header & Navigation -->
   <header>
     <nav class="nav">
       <div class="brand" onclick="switchPage('home')">
-        <img data-asset="logo" src="assets/logo.png" alt="Hendershott Drywall &amp; Repair LLC Logo" class="brand-logo-img" />
+        <img data-asset="logo" src="logo.png" alt="Hendershott Drywall &amp; Repair LLC Logo" class="brand-logo-img" />
         <div>
           <div class="brand-name">Hendershott <span>Drywall &amp; Repair</span></div>
           <div class="brand-sub">Drywall Hanging • Finishing • Ceiling &amp; Patch Repair • LLC</div>
@@ -42,7 +85,7 @@
       <div class="nav-links" id="navLinks">
         <button type="button" class="nav-link active" id="nav-home" onclick="switchPage('home')">Home</button>
         <button type="button" class="nav-link" id="nav-services" onclick="switchPage('services')">Drywall Services</button>
-        <button type="button" class="nav-link" id="nav-about" onclick="switchPage('about')">About Us</button>
+        <button type="button" class="nav-link" id="nav-about" onclick="switchPage('about')">About Kevin</button>
         <button type="button" class="nav-link" id="nav-gallery" onclick="switchPage('gallery')">Project Photos</button>
         <button type="button" class="nav-link" id="nav-contact" onclick="switchPage('contact')">Request Service</button>
       </div>
@@ -55,8 +98,7 @@
   </header>
 
   <main>
-
-    <!-- ==================== PAGE 1: HOME ==================== -->
+    <!-- PAGE 1: HOME -->
     <div id="page-home" class="page-view active">
       <section class="hero">
         <div class="hero-grid">
@@ -116,7 +158,7 @@
         </div>
       </section>
 
-      <!-- Core Specialties Section -->
+      <!-- Core Specialties -->
       <section>
         <div class="container">
           <div class="section-header">
@@ -171,13 +213,13 @@
         </div>
       </section>
 
-      <!-- Interactive Material & Scope Estimator -->
+      <!-- Estimator -->
       <section style="background: var(--brand-dark-2); border-top: 1px solid var(--brand-border); border-bottom: 1px solid var(--brand-border);">
         <div class="container">
           <div class="section-header">
             <span class="section-eyebrow">Project Planning Tool</span>
             <h2>Drywall Sheet &amp; Scope Estimator</h2>
-            <p>Planning a new room, basement, or ceiling repair? Calculate your approximate sheetrock and finishing requirements and send them directly with your estimate request.</p>
+            <p>Calculate your approximate sheetrock and finishing requirements and send them directly with your estimate request.</p>
           </div>
 
           <div class="calc-box">
@@ -234,11 +276,11 @@
                 </div>
                 <div class="calc-stat">
                   <div class="num" id="calcMudOut">4 buckets</div>
-                  <div class="lbl">Joint Compound (All-Purpose/Topping)</div>
+                  <div class="lbl">Joint Compound (All-Purpose)</div>
                 </div>
                 <div class="calc-stat">
                   <div class="num" id="calcTapeOut">275 ft</div>
-                  <div class="lbl">Paper / Mesh Joint Tape</div>
+                  <div class="lbl">Joint Tape</div>
                 </div>
               </div>
               <p style="font-size: 0.82rem; color: var(--brand-subtle); margin-bottom: 1rem;">
@@ -250,7 +292,7 @@
         </div>
       </section>
 
-      <!-- Featured Work Section -->
+      <!-- Featured Projects (Updated image paths) -->
       <section>
         <div class="container">
           <div class="section-header">
@@ -263,7 +305,7 @@
             <div class="gallery-card" onclick="openPhotoModal(0)">
               <div class="gallery-img-wrap">
                 <span class="gallery-tag">Coffered Ceiling &amp; Fireplace</span>
-                <img src="assets/photos/1926.jpg" alt="Vaulted Coffered Ceiling and Fireplace Drywall Finishing" />
+                <img src="1926.jpg" alt="Vaulted Coffered Ceiling and Fireplace Drywall Finishing" />
               </div>
               <div class="gallery-body">
                 <div>
@@ -276,7 +318,7 @@
             <div class="gallery-card" onclick="openPhotoModal(1)">
               <div class="gallery-img-wrap">
                 <span class="gallery-tag">Two-Story Great Room</span>
-                <img src="assets/photos/1929.jpg" alt="Two-Story Great Room Window Wall Drywall" />
+                <img src="1929.jpg" alt="Two-Story Great Room Window Wall Drywall" />
               </div>
               <div class="gallery-body">
                 <div>
@@ -289,7 +331,7 @@
             <div class="gallery-card" onclick="openPhotoModal(2)">
               <div class="gallery-img-wrap">
                 <span class="gallery-tag">Custom Archway &amp; Texture</span>
-                <img src="assets/photos/1855.jpg" alt="Custom Arched Doorway and Textured Drywall Finish" />
+                <img src="1855.jpg" alt="Custom Arched Doorway and Textured Drywall Finish" />
               </div>
               <div class="gallery-body">
                 <div>
@@ -307,14 +349,14 @@
       </section>
     </div>
 
-    <!-- ==================== PAGE 2: DRYWALL SERVICES ==================== -->
+    <!-- PAGE 2: SERVICES -->
     <div id="page-services" class="page-view">
       <section style="background: var(--brand-dark-2); border-bottom: 1px solid var(--brand-border); padding: 3rem 1.25rem;">
         <div class="container">
           <div class="section-header" style="margin-bottom: 0;">
             <span class="section-eyebrow">100% Drywall &amp; Ceiling Specialists</span>
             <h2>Complete Drywall Hanging, Finishing &amp; Repair Services</h2>
-            <p>Serving homeowners, custom home builders, and commercial property managers in Scott City, Cape Girardeau, Sikeston, Jackson, and surrounding Southeast Missouri communities.</p>
+            <p>Serving homeowners, custom home builders, and commercial properties in Scott City, Cape Girardeau, Sikeston, Jackson, and Southeast Missouri.</p>
           </div>
         </div>
       </section>
@@ -401,7 +443,7 @@
               <div>
                 <div class="card-icon">🚨</div>
                 <h3>24/7 Emergency Water-Damaged Drywall</h3>
-                <p>Roof leak, burst pipe, or overflowing upstairs bath? Wet ceiling drywall can collapse suddenly and trap moisture.</p>
+                <p>Roof leak, burst pipe, or overflowing bath? Wet ceiling drywall can collapse suddenly and trap moisture.</p>
                 <ul class="card-list">
                   <li>Rapid containment &amp; safe tear-out of soaked drywall</li>
                   <li>Removal of saturated attic or ceiling cavity insulation</li>
@@ -413,7 +455,7 @@
             </div>
           </div>
 
-          <!-- Interactive Finish Level Comparison -->
+          <!-- Finish Level Guide -->
           <div style="margin-top: 3.5rem; background: var(--brand-card); border: 1px solid var(--brand-border); border-radius: var(--radius-lg); padding: 2rem;">
             <span class="section-eyebrow">Craftsmanship Standards</span>
             <h3 style="font-size: 1.5rem; color: var(--brand-cream); margin-bottom: 0.75rem;">Compare Gypsum Finish Levels</h3>
@@ -437,9 +479,8 @@
           </div>
         </div>
       </section>
-    </div>
-
-    <!-- ==================== PAGE 3: ABOUT US ==================== -->
+                </div>
+                <!-- PAGE 3: ABOUT US -->
     <div id="page-about" class="page-view">
       <section style="background: var(--brand-dark-2); border-bottom: 1px solid var(--brand-border); padding: 3rem 1.25rem;">
         <div class="container">
@@ -476,24 +517,24 @@
             </div>
 
             <div class="card" style="text-align: center; align-items: center; padding: 2.25rem;">
-              <img src="assets/logo.png" alt="Hendershott Drywall &amp; Repair LLC Badge" style="width: 170px; height: auto; margin-bottom: 1rem;" />
+              <img src="logo.png" alt="Hendershott Drywall &amp; Repair LLC Badge" style="width: 170px; height: auto; margin-bottom: 1rem;" />
               <h3 style="font-size: 1.45rem;">Hendershott Drywall &amp; Repair LLC</h3>
               <p style="margin-bottom: 1rem;">Scott City, Missouri 63780 • Southeast Missouri</p>
               <div style="width: 100%; text-align: left; background: #12161b; padding: 1.2rem; border-radius: 10px; border: 1px solid var(--brand-border);">
                 <div style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Owner:</strong> Kevin Hendershott</div>
-                <div style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Base Location:</strong> Scott City, MO 63780</div>
+                <div style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Base Location:</strong> 1038 Oak Street Apt A8, Scott City, MO 63780</div>
                 <div style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Phone / Text:</strong> <a href="tel:6187027892" style="color: var(--brand-cream); text-decoration: underline;">(618) 702-7892</a></div>
                 <div style="font-size: 0.85rem;"><strong>Email:</strong> <a href="mailto:kevin@hendershottdrywall.com" style="color: var(--brand-cream); text-decoration: underline;">kevin@hendershottdrywall.com</a></div>
               </div>
             </div>
           </div>
 
-          <!-- Frequently Asked Questions -->
+          <!-- FAQ -->
           <div style="margin-top: 4rem;">
             <div class="section-header">
               <span class="section-eyebrow">Common Questions</span>
               <h2>Drywall &amp; Repair FAQs</h2>
-              <p>Click any question below for answers on how we handle dust, drying times, texture matching, and emergency repairs.</p>
+              <p>Answers on how we handle dust, drying times, texture matching, and emergency repairs.</p>
             </div>
 
             <div style="max-width: 860px; margin: 0 auto;">
@@ -503,7 +544,7 @@
                   <span>▾</span>
                 </button>
                 <div class="faq-body">
-                  We treat your home with respect. Before any tear-out, hanging, or sanding begins, we lay down heavy-duty drop cloths, mask off adjacent doorways and vents with plastic sheeting, and use vacuum-assisted sanding equipment to keep airborne dust to an absolute minimum.
+                  We lay down heavy-duty drop cloths, mask off adjacent doorways and vents with plastic sheeting, and use vacuum-assisted sanding equipment to keep airborne dust to an absolute minimum.
                 </div>
               </div>
 
@@ -526,23 +567,12 @@
                   We offer 24/7 emergency dispatch across Scott City, Cape Girardeau, and Southeast Missouri. Call or text (618) 702-7892 or submit our Emergency Form so we can safely remove saturated board and wet insulation before the ceiling collapses further.
                 </div>
               </div>
-
-              <div class="faq-item" id="faq-3">
-                <button type="button" class="faq-btn" onclick="toggleFaq(3)">
-                  <span>Why does mudding and finishing require multiple visits?</span>
-                  <span>▾</span>
-                </button>
-                <div class="faq-body">
-                  Proper drywall finishing cannot be rushed without risking shrinkage cracks. For smaller patches, we can often use rapid-setting "hot mud" compounds to finish faster, while whole-room taping and Level 5 skim coats require proper drying intervals between the tape coat, fill coat, and final finish coat.
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
     </div>
-
-    <!-- ==================== PAGE 4: PROJECT PHOTOS GALLERY ==================== -->
+    <!-- PAGE 4: GALLERY (Updated paths) -->
     <div id="page-gallery" class="page-view">
       <section style="background: var(--brand-dark-2); border-bottom: 1px solid var(--brand-border); padding: 3rem 1.25rem;">
         <div class="container">
@@ -555,17 +585,16 @@
           <div class="filter-bar">
             <button type="button" class="filter-pill active" id="filter-all" onclick="filterGallery('all')">All 6 Projects</button>
             <button type="button" class="filter-pill" id="filter-ceilings" onclick="filterGallery('ceilings')">Ceilings &amp; Custom</button>
-            <button type="button" class="filter-pill" id="filter-hanging" onclick="filterGallery('hanging')">New Hanging &amp; Great Rooms</button>
-            <button type="button" class="filter-pill" id="filter-finishing" onclick="filterGallery('finishing')">Level 5 &amp; Skim Coating</button>
-            <button type="button" class="filter-pill" id="filter-repair" onclick="filterGallery('repair')">Ceiling Patch &amp; Texture</button>
+            <button type="button" class="filter-pill" id="filter-hanging" onclick="filterGallery('hanging')">New Hanging</button>
+            <button type="button" class="filter-pill" id="filter-finishing" onclick="filterGallery('finishing')">Level 5 Skim</button>
+            <button type="button" class="filter-pill" id="filter-repair" onclick="filterGallery('repair')">Ceiling Patch &amp; Match</button>
           </div>
 
           <div class="grid-3" id="galleryGrid">
-            <!-- Photo 0 -->
             <div class="gallery-card" data-category="ceilings" onclick="openPhotoModal(0)">
               <div class="gallery-img-wrap">
                 <span class="gallery-tag">Coffered Ceiling &amp; Fireplace</span>
-                <img src="assets/photos/1926.jpg" alt="Vaulted Coffered Ceiling and Fireplace Drywall Finishing" />
+                <img src="1926.jpg" alt="Vaulted Coffered Ceiling and Fireplace Drywall Finishing" />
               </div>
               <div class="gallery-body">
                 <div>
@@ -575,11 +604,10 @@
               </div>
             </div>
 
-            <!-- Photo 1 -->
             <div class="gallery-card" data-category="hanging" onclick="openPhotoModal(1)">
               <div class="gallery-img-wrap">
                 <span class="gallery-tag">Two-Story Great Room</span>
-                <img src="assets/photos/1929.jpg" alt="Two-Story Great Room Window Wall Drywall" />
+                <img src="1929.jpg" alt="Two-Story Great Room Window Wall Drywall" />
               </div>
               <div class="gallery-body">
                 <div>
@@ -589,11 +617,10 @@
               </div>
             </div>
 
-            <!-- Photo 2 -->
             <div class="gallery-card" data-category="ceilings" onclick="openPhotoModal(2)">
               <div class="gallery-img-wrap">
                 <span class="gallery-tag">Custom Archway &amp; Texture</span>
-                <img src="assets/photos/1855.jpg" alt="Custom Arched Doorway and Textured Drywall Finish" />
+                <img src="1855.jpg" alt="Custom Arched Doorway and Textured Drywall Finish" />
               </div>
               <div class="gallery-body">
                 <div>
@@ -603,11 +630,10 @@
               </div>
             </div>
 
-            <!-- Photo 3 -->
             <div class="gallery-card" data-category="finishing" onclick="openPhotoModal(3)">
               <div class="gallery-img-wrap">
                 <span class="gallery-tag">Level 5 Smooth Skim Coat</span>
-                <img src="assets/photos/level5-finish.jpg" alt="Level 5 Smooth Wall Skim Coat and Taping" />
+                <img src="level5-finish.jpg" alt="Level 5 Smooth Wall Skim Coat and Taping" />
               </div>
               <div class="gallery-body">
                 <div>
@@ -617,11 +643,10 @@
               </div>
             </div>
 
-            <!-- Photo 4 -->
             <div class="gallery-card" data-category="repair" onclick="openPhotoModal(4)">
               <div class="gallery-img-wrap">
                 <span class="gallery-tag">Ceiling Patch &amp; Knockdown</span>
-                <img src="assets/photos/ceiling-patch.jpg" alt="Ceiling Water Damage Patch and Knockdown Texture Match" />
+                <img src="ceiling-patch.jpg" alt="Ceiling Water Damage Patch and Knockdown Texture Match" />
               </div>
               <div class="gallery-body">
                 <div>
@@ -631,11 +656,10 @@
               </div>
             </div>
 
-            <!-- Photo 5 -->
             <div class="gallery-card" data-category="hanging" onclick="openPhotoModal(5)">
               <div class="gallery-img-wrap">
                 <span class="gallery-tag">New Construction Sheetrock</span>
-                <img src="assets/photos/new-hanging.jpg" alt="New Construction 5/8 Drywall Hanging and Taping" />
+                <img src="new-hanging.jpg" alt="New Construction 5/8 Drywall Hanging and Taping" />
               </div>
               <div class="gallery-body">
                 <div>
@@ -648,8 +672,7 @@
         </div>
       </section>
     </div>
-
-    <!-- ==================== PAGE 5: REQUEST SERVICE / CONTACT ==================== -->
+    <!-- PAGE 5: CONTACT -->
     <div id="page-contact" class="page-view">
       <section style="padding: 3rem 1.25rem;">
         <div class="container">
@@ -737,12 +760,12 @@
                 <div>
                   <span class="section-eyebrow">Direct Contact</span>
                   <h3>Call, Text, or Email Kevin Directly</h3>
-                  <p>Prefer to talk through your project right now or text photos of a damaged wall or ceiling? Reach out directly:</p>
+                  <p>Reach out directly for questions or emergency dispatch:</p>
                   <ul class="card-list">
                     <li><strong>Phone:</strong> <a href="tel:6187027892" style="color: var(--brand-cream); text-decoration: underline;">(618) 702-7892</a></li>
                     <li><strong>Text Photos:</strong> <a href="sms:6187027892" style="color: var(--brand-cream); text-decoration: underline;">(618) 702-7892</a></li>
                     <li><strong>Email:</strong> <a href="mailto:kevin@hendershottdrywall.com" style="color: var(--brand-cream); text-decoration: underline;">kevin@hendershottdrywall.com</a></li>
-                    <li><strong>Office / Dispatch:</strong> 1038 Oak Street Apt. A8, Scott City, MO 63780</li>
+                    <li><strong>Base:</strong> 1038 Oak Street Apt. A8, Scott City, MO 63780</li>
                   </ul>
                 </div>
                 <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
@@ -755,8 +778,7 @@
                 <div>
                   <span class="section-eyebrow">Recent Submissions Log (Browser Preview)</span>
                   <h3>Your Submitted Test Requests</h3>
-                  <p style="margin-bottom: 0.75rem;">Test the form on the left to preview how service requests are captured and formatted:</p>
-                  <div id="submissionsList" style="font-size: 0.85rem; color: var(--brand-subtle);">
+                  <div id="submissionsList" style="font-size: 0.85rem; color: var(--brand-subtle); margin-top: 0.5rem;">
                     No test requests submitted in this session yet.
                   </div>
                 </div>
@@ -766,17 +788,15 @@
         </div>
       </section>
     </div>
-
   </main>
-
-  <!-- ==================== FOOTER ==================== -->
+  <!-- Footer -->
   <footer>
     <div class="footer-grid">
       <div class="footer-col">
-        <img data-asset="logo" src="assets/logo.png" alt="Hendershott Drywall &amp; Repair LLC Logo" style="height: 76px; width: auto; margin-bottom: 0.75rem;" />
+        <img data-asset="logo" src="logo.png" alt="Hendershott Drywall &amp; Repair LLC Logo" style="height: 76px; width: auto; margin-bottom: 0.75rem;" />
         <div class="brand-name" style="font-size: 1.1rem; margin-bottom: 0.4rem;">Hendershott <span>Drywall &amp; Repair LLC</span></div>
         <p style="color: var(--brand-subtle); font-size: 0.9rem; margin-bottom: 0.85rem;">
-          Dedicated strictly to high-craftsmanship drywall hanging, taping, mudding, Level 5 finishing, texture matching, and emergency drywall repair across Southeast Missouri.
+          Drywall hanging, taping, mudding, Level 5 finishing, texture matching, and emergency drywall repair across Southeast Missouri.
         </p>
         <p style="color: var(--brand-subtle); font-size: 0.82rem;">
           © 2026 Hendershott Drywall &amp; Repair LLC (hendershottdrywall.com).
@@ -817,7 +837,7 @@
     </div>
   </footer>
 
-  <!-- Sticky Call / Text Bar -->
+  <!-- Sticky Actions -->
   <div class="sticky-actions">
     <a href="sms:6187027892" class="sticky-btn sticky-text">💬 Text (618) 702-7892</a>
     <a href="tel:6187027892" class="sticky-btn sticky-call">📞 Call (618) 702-7892</a>
@@ -830,7 +850,7 @@
       <span class="section-eyebrow" id="modalTag">Featured Project</span>
       <h3 id="modalTitle" style="font-size: 1.5rem; color: var(--brand-cream); margin-bottom: 0.75rem;">Project Title</h3>
       <div style="border-radius: 10px; overflow: hidden; margin-bottom: 1rem; border: 1px solid var(--brand-border); background: #0b0d10;">
-        <img id="modalImg" src="assets/photos/1926.jpg" alt="Project Full View" style="width: 100%; max-height: 440px; object-fit: cover;" />
+        <img id="modalImg" src="1926.jpg" alt="Project Full View" style="width: 100%; max-height: 440px; object-fit: cover;" />
       </div>
       <p id="modalDesc" style="color: #d1d5db; font-size: 0.95rem; margin-bottom: 1rem;"></p>
       <div id="modalSpecs" style="background: #12161b; padding: 0.9rem 1.1rem; border-radius: 8px; border: 1px solid var(--brand-border); font-size: 0.85rem; color: var(--brand-subtle); margin-bottom: 1.25rem;"></div>
@@ -841,7 +861,7 @@
     </div>
   </div>
 
-  <!-- Form Submission Confirmation Modal -->
+  <!-- Confirmation Modal -->
   <div class="modal-backdrop" id="confirmModal" onclick="closeConfirmModalOnBackdrop(event)">
     <div class="modal-box" style="max-width: 560px;">
       <button type="button" class="modal-close" onclick="closeConfirmModal()" aria-label="Close Confirmation">✕</button>
