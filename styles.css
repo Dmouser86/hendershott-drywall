@@ -916,3 +916,153 @@
         grid-template-columns: 1fr;
       }
     }
+/* ==========================================================================
+   BEFORE & AFTER INTERACTIVE SLIDER (RED / CHARCOAL / CREAM)
+   ========================================================================== */
+
+.comparison-wrapper {
+  max-width: 960px;
+  margin: 0 auto 40px auto;
+  background: var(--brand-card, #1e242c);
+  border: 1px solid var(--brand-border, #2e3744);
+  border-top: 4px solid var(--brand-red, #c81e2b);
+  border-radius: var(--radius-lg, 14px);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg, 0 18px 40px rgba(0, 0, 0, 0.45));
+}
+
+.comparison-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  user-select: none;
+  background: #0d1014;
+  border-radius: var(--radius-md, 10px);
+  border: 1px solid var(--brand-border, #2e3744);
+}
+
+.comparison-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  display: block;
+}
+
+.comparison-image-before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  clip-path: inset(0 calc(100% - var(--position, 50%)) 0 0);
+  transition: clip-path 0.04s ease-out;
+}
+
+.comparison-label {
+  position: absolute;
+  top: 14px;
+  padding: 5px 12px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  z-index: 5;
+  pointer-events: none;
+  border-radius: 6px;
+  backdrop-filter: blur(8px);
+}
+
+.label-before {
+  left: 14px;
+  background: rgba(17, 20, 24, 0.92);
+  color: #fca5a5;
+  border: 1px solid rgba(200, 30, 43, 0.6);
+  border-left: 3px solid var(--brand-red, #c81e2b);
+}
+
+.label-after {
+  right: 14px;
+  background: rgba(17, 20, 24, 0.92);
+  color: var(--brand-cream, #f4efe6);
+  border: 1px solid rgba(244, 239, 230, 0.3);
+  border-right: 3px solid var(--brand-cream, #f4efe6);
+}
+
+/* Invisible range drag bar */
+.comparison-range {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 10;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Vertical Crimson Divider Line */
+.comparison-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--position, 50%);
+  width: 3px;
+  background-color: var(--brand-red, #c81e2b);
+  box-shadow: 0 0 12px var(--brand-red-glow, rgba(200, 30, 43, 0.45)), 0 0 4px #fff;
+  pointer-events: none;
+  z-index: 6;
+  transform: translateX(-50%);
+  transition: left 0.04s ease-out;
+}
+
+/* Center circular badge handle */
+.comparison-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 42px;
+  height: 42px;
+  background-color: #111418;
+  border: 2px solid var(--brand-red, #c81e2b);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: var(--brand-cream, #f4efe6);
+  box-shadow: 0 0 16px var(--brand-red-glow, rgba(200, 30, 43, 0.45));
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.comparison-details {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.comparison-details h3 {
+  font-size: 1.2rem;
+  color: var(--brand-cream, #f4efe6);
+  margin-bottom: 0.25rem;
+}
+
+.comparison-details p {
+  color: var(--brand-subtle, #9ca3af);
+  font-size: 0.88rem;
+  margin: 0;
+}
