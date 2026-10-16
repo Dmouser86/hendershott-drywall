@@ -412,3 +412,10 @@ window.addEventListener('DOMContentLoaded', function() {
     cService.value = srv;
   }
 });
+function updateSliderPosition(event) {
+  var value = event.target.value;
+  var container = event.target.closest('.comparison-container');
+  if (container) {
+    container.style.setProperty('--position', value + '%');
+  }
+}
